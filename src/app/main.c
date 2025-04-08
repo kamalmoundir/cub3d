@@ -1,6 +1,8 @@
 #include "types.h"
 #include <stdlib.h>
 
+// below is just for testing concepts/ understanding, hence not part of actual implementation 
+
 #define mapWidth 24
 #define mapHeight 24
 #define screenWidth 640
