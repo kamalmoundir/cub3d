@@ -73,6 +73,10 @@ $(TEST_OBJ)				:	$(TEST_OBJ_DIR)
 $(OBJ_DIR)				:	
 							@mkdir -p $(OBJ_DIR)
 							@mkdir -p $(OBJ_DIR)/app
+							@mkdir -p $(OBJ_DIR)/parse
+							@mkdir -p $(OBJ_DIR)/player
+							@mkdir -p $(OBJ_DIR)/raycasting_engine
+							@mkdir -p $(OBJ_DIR)/render
 							@mkdir -p $(OBJ_DIR)/utils
 
 #	test
