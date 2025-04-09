@@ -3,6 +3,10 @@
 
 // memory_utils.h
 void	safe_free(void **ptr);
-char	*safe_strdup(const char *str);
+
+// error_utils.h
+void	set_error(t_error *error, const char *message, int code);
+void	display_error(t_game *game);
+void	clear_error(t_error *error);
 
 #endif

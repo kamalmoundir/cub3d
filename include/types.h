@@ -3,37 +3,33 @@
 
 # include <stdbool.h>
 # include "../libft/include/libft.h"
+# include "../libft/include/ft_printf.h"
+
+#define mapWidth 24
+#define mapHeight 24
+#define screenWidth 640
+#define screenHeight 480
 
 typedef struct s_game			t_game;
 typedef struct s_mlx			t_mlx;
 typedef struct s_player			t_player;
+typedef struct s_ray			t_ray;
 typedef struct s_map			t_map;
 typedef struct s_config			t_config;
 typedef struct s_keys			t_keys;
 typedef struct s_render_data	t_render_data;
 typedef struct s_textures		t_textures;
 
-typedef struct s_vec2
+typedef struct	s_vec2
 {
 	double	x;
 	double	y;
 }	t_vec2;
 
-
-typedef struct s_config
+typedef struct	s_error 
 {
-	bool	is_done;
-	double	posX;
-	double	posY;
-	double	dirX;
-	double	dirY;
-	double	planeX;
-	double	planeY;
-	double	time;
-	double	oldTime;
-	double	cameraX;
-	double	rayDirX;
-	double	rayDirY;
-}	t_config;
+	char	*message;
+	int		code;
+}	t_error;
 
 #endif

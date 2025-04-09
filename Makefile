@@ -10,8 +10,13 @@ MAKEFLAGS				+=	--no-print-directory
 SRC_DIR					=	src
 
 #	files
-SRC						=	$(SRC_DIR)/app/main.c			\
-							$(SRC_DIR)/utils/memory_utils.c
+SRC						=	$(SRC_DIR)/app/main.c					\
+							$(SRC_DIR)/app/clean_central.c			\
+							$(SRC_DIR)/app/init_game.c				\
+							$(SRC_DIR)/app/init_ray.c				\
+							$(SRC_DIR)/raycasting_engine/dda.c		\
+							$(SRC_DIR)/utils/memory_utils.c			\
+							$(SRC_DIR)/utils/error_utils.c
 
 TOTAL_SRC_FILES			:=	$(words $(SRC))
 
