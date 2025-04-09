@@ -2,13 +2,13 @@
 # define TYPES_H
 
 # include <stdbool.h>
-# include "../libft/include/libft.h"
-# include "../libft/include/ft_printf.h"
+# include "../lib/libft/include/libft.h"
+# include "../lib/libft/include/ft_printf.h"
 
-#define mapWidth 24
-#define mapHeight 24
-#define screenWidth 640
-#define screenHeight 480
+# define CUB3D_MAP_WIDTH 24
+# define CUB3D_MAP_HEIGHT 24
+# define CUB3D_SCREEN_WIDTH 640
+# define CUB3D_SCREEN_HEIGHT 480
 
 typedef struct s_game			t_game;
 typedef struct s_mlx			t_mlx;

@@ -1,6 +1,12 @@
 #ifndef GAME_H
 # define GAME_H
 
+# include "mlx_wrapper.h"
+# include "player.h"
+# include "ray.h"
+# include "map.h"
+# include "utils.h"
+# include "config.h"
 # include "types.h"
 
 typedef struct	s_game
@@ -9,13 +15,14 @@ typedef struct	s_game
 	t_player		player;
 	t_ray			ray;
 	t_map			map;
-	t_textures		textures;
 	t_config		config;
-	t_keys			keys;
-	t_render_data	render;
+	//t_textures		textures;
+	//t_keys			keys;
+	//t_render_data	render;
 	t_error			error;
 	bool			running;
 }	t_game;
+
 
 // dda.c
 void	perform_dda(t_map *map, t_ray *ray, t_error *error);

@@ -1,6 +1,9 @@
 #ifndef UTILS_H
 # define UTILS_H
 
+# include "error.h"
+# include "game.h"
+
 // memory_utils.h
 void	safe_free(void **ptr);
 

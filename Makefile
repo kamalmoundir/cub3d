@@ -1,7 +1,8 @@
 ###	Variables
 NAME					=	cub3d
 TEST_EXEC				=	test_runner
-LIBFT 					=	libft
+LIBFT 					=	lib/libft
+MINILIBX				=	lib/minilibx-linux
 INCLUDES				=	./include
 MAKEFLAGS				+=	--no-print-directory
 
@@ -30,7 +31,7 @@ OBJ						=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
 ###	Compilation/ Linking configs
 CC						=	cc
 CFLAGS					=	-Werror -Wextra -Wall
-LDFLAGS					=	-lreadline -Llibft -lft
+LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -lXext -lX11 -lm -lz
 RM						=	rm -rf
 COUNT					:=	0
 
@@ -61,7 +62,9 @@ all						:	$(NAME)
 $(NAME)					:	$(OBJ) 
 							@printf "\n"
 							@printf "\n$(DEF_COLOR)🔄 Compiling dependencies...$(DEF_COLOR)\n"
-							@make -C $(LIBFT) 
+							@make -C $(LIBFT)
+							@printf "\n"
+							@make -C $(MINILIBX)
 							@printf "\n$(DEF_COLOR)✅ Dependencies fulfilled.$(DEF_COLOR)\n"
 							@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LDFLAGS)
 							@printf "\n$(BOLD_GREEN)[$(NAME)]:\t✅ $(NAME) compiled successfully!$(DEF_COLOR)\n"

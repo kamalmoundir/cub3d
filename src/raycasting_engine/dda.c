@@ -26,7 +26,7 @@ void	perform_dda(t_map *map, t_ray *ray, t_error *error)
 		if (ray->mapX < 0 || ray->mapX >= map->width
 			|| ray->mapY < 0 || ray->mapY >= map->height)
 		{
-			set_error(error, "Raycasting out of bounds");
+			set_error(error, "Raycasting out of bounds", 2);
 			return ;
 		}
 		if (map->grid[ray->mapX][ray->mapY])

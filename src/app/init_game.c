@@ -5,7 +5,9 @@
 #include "ray.h"
 #include "utils.h"
 #include "game.h"
+#include "mlx_wrapper.h"
 
+static bool	init_mlx_wrapper(t_mlx *mlx_wrapper);
 static bool init_player(t_player *player);
 static bool	init_map(t_map *map);
 
@@ -19,6 +21,11 @@ bool	init_game(t_game *game)
 	error->message = NULL;
 	error->code = 0;
 	game->error = *error; // revise logic later, is it correct dereferencing in this context?
+	if (!init_mlx_wrapper(&game->mlx))
+	{
+		set_error(&game->error, "Failed to initialize mlx_wrapper", 1);
+		return (false);
+	}
 	if (!init_player(&game->player))
 	{
 		set_error(&game->error, "Failed to initialize player", 1);
@@ -26,7 +33,8 @@ bool	init_game(t_game *game)
 	}
 	if (!init_map(&game->map))
 	{
-		set_error(&game->error, "Failed to initialize map", 2);
+		set_error(&game->error, "Failed to initialize map", 1);
+		return (false);
 	}
 	game->running = true;
 	// PLACEHOLDER
@@ -48,7 +56,7 @@ static bool init_player(t_player *player) // example only, will feed from parser
 
 static bool	init_map(t_map *map) // refactor later and connect to parser
 {
-	static int worldMap[mapWidth][mapHeight]=
+	static int grid[CUB3D_MAP_WIDTH][CUB3D_MAP_HEIGHT]=
 	{
 	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -78,8 +86,8 @@ static bool	init_map(t_map *map) // refactor later and connect to parser
 	int	i;
 	int	j;
 
-	map->width = mapWidth;
-	map->height = mapHeight;
+	map->width = CUB3D_MAP_WIDTH;
+	map->height = CUB3D_MAP_HEIGHT;
 	map->grid = malloc(map->height * sizeof(int *));
 	if (!map->grid)
 		return (false);
@@ -105,5 +113,28 @@ static bool	init_map(t_map *map) // refactor later and connect to parser
 		}
 		i++;
 	}
+	return (true);
+}
+
+static bool	init_mlx_wrapper(t_mlx *mlx_wrapper)
+{
+	mlx_wrapper->mlx_ptr = mlx_init();
+	if (!mlx_wrapper->mlx_ptr)
+		return (false);
+	mlx_wrapper->height = CUB3D_SCREEN_HEIGHT;
+	mlx_wrapper->width = CUB3D_SCREEN_WIDTH;
+	mlx_wrapper->win_ptr = mlx_new_window(mlx_wrapper->mlx_ptr,
+			mlx_wrapper->width,
+			mlx_wrapper->height,
+			"cub3d");
+	if (!mlx_wrapper->win_ptr)
+		return (false);
+	mlx_wrapper->img_ptr = mlx_new_image(mlx_wrapper->mlx_ptr, mlx_wrapper->width, mlx_wrapper->height);
+	if (!mlx_wrapper->img_ptr)
+		return (false);
+	mlx_wrapper->img_data = mlx_get_data_addr(mlx_wrapper->img_ptr,
+			&(mlx_wrapper->bpp),
+			&(mlx_wrapper->line_len),
+			&(mlx_wrapper->endian));
 	return (true);
 }

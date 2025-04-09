@@ -1,8 +1,10 @@
 #include <stdlib.h>
-#include "types.h"
 #include "game.h"
 #include "ray.h"
 #include "utils.h"
+#include "player.h"
+#include "mlx_wrapper.h"
+#include "map.h"
 
 // below is just for testing concepts/ understanding, hence not part of actual implementation 
 
