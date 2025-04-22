@@ -14,6 +14,16 @@ typedef struct s_ray // temporary, updated for each column of the screen while r
 	int		mapY;
 	int		side; // side of the wall hit (0 = vertical, 1 = horizontal)
 	double	perpWallDist; // perpendicular distance to the wall
+	double	wallX; // wall hit position for texturing
 }	t_ray;
+
+// ray_setup.c
+void	init_ray(t_player *player, t_ray *ray, int x, int screenWidth);
+
+// raycasting_dda.c
+bool	perform_dda(t_map *map, t_ray *ray, t_error *error);
+
+// raycasting_utils.c
+void	calculate_wall_distance(t_player *player, t_ray *ray);
 
 #endif

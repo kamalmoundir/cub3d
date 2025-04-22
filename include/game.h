@@ -21,6 +21,8 @@ typedef struct	s_game
 	t_keys			keys;
 	t_render_data	render;
 	t_error			error;
+	int				floor_color;
+	int				ceiling_color;
 	bool			running;
 }	t_game;
 
@@ -48,9 +50,6 @@ typedef struct s_textures
 	int		height;
 }	t_textures;
 
-
-// dda.c
-void	perform_dda(t_map *map, t_ray *ray, t_error *error);
 
 // init_game.c
 bool	init_game(t_game *game);

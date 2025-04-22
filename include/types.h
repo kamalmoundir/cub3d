@@ -32,4 +32,10 @@ typedef struct	s_error
 	int		code;
 }	t_error;
 
+typedef struct	s_line
+{
+	int	start;
+	int	end;
+}	t_line;
+
 #endif

@@ -4,12 +4,14 @@
 #include "ray.h"
 #include "utils.h"
 #include "player.h"
+#include "render.h"
 #include "mlx_wrapper.h"
 #include "map.h"
 
 static int	key_press(int keycode, t_game *game);
 static int	key_release(int keycode, t_game *game);
 static int	close_window(t_game *game);
+static int	game_loop(t_game *game);
 
 int	main(int argc, char **argv)
 {
@@ -21,8 +23,8 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	ft_memset(&game, 0, sizeof(t_game));
-	if (!parse_arguments(argc, argv, &game))
-		return (EXIT_FAILURE);
+	// if (!parse_arguments(argc, argv, &game))
+	//	return (EXIT_FAILURE);
 	if (!init_game(&game))
 	{
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");
@@ -31,17 +33,21 @@ int	main(int argc, char **argv)
 	mlx_hook(game.mlx.win_ptr, 2, 1L<<0, key_press, &game);
 	mlx_hook(game.mlx.win_ptr, 3, 1L<<1, key_release, &game);
 	mlx_hook(game.mlx.win_ptr, 17, 0, close_window, &game);
-	game.running = true;
-	while (game.running)
-	{
-		update_player(&game);
-		render_frame(&game);
-		perform_dda(&game.map, &game.ray, &game.error);
-		if (game.error.message)
-			set_error(&game.error, "Unable to perform dda", EXIT_FAILURE);
-		mlx_loop_hook(game.mlx.mlx_ptr, NULL, &game);
-	}
+	mlx_loop_hook(game.mlx.mlx_ptr, game_loop, &game);
+	mlx_loop(game.mlx.mlx_ptr);
 	cleanup_game(&game);
+	return (0);
+}
+
+static int	game_loop(t_game *game)
+{
+	if (!game->running)
+	{
+		mlx_loop_end(game->mlx.mlx_ptr);
+		return (1);
+	}
+	update_player(game);
+	render_frame(game);
 	return (0);
 }
 

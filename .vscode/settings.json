@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"player.h": "c"
+		"player.h": "c",
+		"math.h": "c",
+		"game.h": "c",
+		"render.h": "c"
 	}
 }

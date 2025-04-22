@@ -15,12 +15,8 @@ bool	init_game(t_game *game)
 {
 	t_error	*error;
 
-	error = malloc(sizeof(t_error));
-	if (!error)
-		return (false);
-	error->message = NULL;
-	error->code = 0;
-	game->error = *error; // revise logic later, is it correct dereferencing in this context?
+	game->error.message = NULL;
+	game->error.code = 0;
 	if (!init_mlx_wrapper(&game->mlx))
 	{
 		set_error(&game->error, "Failed to initialize mlx_wrapper", 1);

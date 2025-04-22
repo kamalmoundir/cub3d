@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ray_setup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:36:23 by sstoev            #+#    #+#             */
+/*   Updated: 2025/04/22 22:37:28 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <math.h>
 #include "types.h"
 #include "player.h"
@@ -27,12 +39,21 @@ static void	calculate_ray_direction(t_player *player, t_ray *ray, double cameraX
 
 static void	calculate_delta_dist(t_ray *ray)
 {
+	double	inv_dir_x;
+	double	inv_dir_y;
+
 	if (ray->direction.x != 0)
-		ray->deltaDist.x = fabs(1 / ray->direction.x);
+	{
+		inv_dir_x = 1.0 / ray->direction.x;
+		ray->deltaDist.x = fabs(inv_dir_x);
+	}
 	else
 		ray->deltaDist.x = INFINITY;
 	if (ray->direction.y != 0)
-		ray->deltaDist.y = fabs(1 / ray->direction.y);
+	{
+		inv_dir_y = 1.0 / ray->direction.y;
+		ray->deltaDist.y = fabs(inv_dir_y);
+	}
 	else
 		ray->deltaDist.y = INFINITY;
 }
