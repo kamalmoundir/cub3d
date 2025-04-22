@@ -5,10 +5,11 @@
 
 typedef struct	s_config
 {
-	char	*texture_north;
-	char	*texture_south;
-	char	*texture_east;
-	char	*texture_west;
+	char	*map_path;
+	char	*texture_north_path;
+	char	*texture_south_path;
+	char	*texture_east_path;
+	char	*texture_west_path;
 	int		floor_color;
 	int		ceiling_color;
 }	t_config;

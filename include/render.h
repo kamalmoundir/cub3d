@@ -5,9 +5,18 @@
 
 typedef struct	s_render_data
 {
-	int		screen_width;
-	int		screen_height;
-	double	*zbuffer; // for sprite drawing or depth shading
+	double	camera_x;
+	double	perp_wall_dist;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+	int		tex_x;
+	double	tex_pos;
+	double	tex_step;
+	int		tex_y;
+	int		color;
+	int		side;
+	double	wall_x;
 }	t_render_data;
 
 #endif
