@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc_utils.c                                       :+:      :+:    :+:   */
+/*   player_collision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 23:13:42 by sstoev            #+#    #+#             */
-/*   Updated: 2025/04/22 23:13:43 by sstoev           ###   ########.fr       */
+/*   Created: 2025/04/23 16:08:21 by sstoev            #+#    #+#             */
+/*   Updated: 2025/04/23 16:08:22 by sstoev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/time.h>
-#include "utils.h"
+#include "player.h"
+#include "game.h"
 
-int	max_int(int a, int b)
+bool	is_wall(t_game *game, double x, double y)
 {
-	if (a > b)
-		return (a);
-	return (b);
-}
+	int		map_x;
+	int		map_y;
+	double	buffer;
 
-double	get_time_ms(void)
-{
-	struct timeval	tv;
-
-	gettimeofday(&tv, NULL);
-	return ((tv.tv_sec * 1000.0) + (tv.tv_usec / 1000.0));
+	buffer = 0.1; // small buffer distance to avoid sliding along walls
+	map_x = (int)x;
+	map_y = (int)y;
+	if (map_x < 0 || map_x >= game->map.width || map_y < 0 || map_y >= game->map.height)
+		return (true);
+	return (game->map.grid[map_y][map_x] != 0);
 }

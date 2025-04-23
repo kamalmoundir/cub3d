@@ -14,6 +14,11 @@ SRC_DIR					=	src
 SRC						=	$(SRC_DIR)/app/main.c							\
 							$(SRC_DIR)/app/clean_central.c					\
 							$(SRC_DIR)/app/init_game.c						\
+							$(SRC_DIR)/app/input.c							\
+							$(SRC_DIR)/player/player_init.c					\
+							$(SRC_DIR)/player/player_update.c				\
+							$(SRC_DIR)/player/player_movement.c				\
+							$(SRC_DIR)/player/player_collision.c			\
 							$(SRC_DIR)/raycasting_engine/init_ray.c			\
 							$(SRC_DIR)/raycasting_engine/raycasting_dda.c	\
 							$(SRC_DIR)/raycasting_engine/raycasting_utils.c	\

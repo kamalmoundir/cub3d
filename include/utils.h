@@ -13,6 +13,7 @@ void	display_error(t_game *game);
 void	clear_error(t_error *error);
 
 // misc_utils.c
-int	max_int(int a, int b);
+int		max_int(int a, int b);
+double	get_time_ms(void);
 
 #endif

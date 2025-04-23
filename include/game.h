@@ -17,24 +17,15 @@ typedef struct	s_game
 	t_ray			ray;
 	t_map			map;
 	t_config		config;
-	t_textures		textures;
-	t_keys			keys;
 	t_render_data	render;
 	t_error			error;
+	double			last_frame_time;
+	double			frame_time;
 	int				floor_color;
 	int				ceiling_color;
 	bool			running;
+	//t_textures		textures;
 }	t_game;
-
-typedef struct s_keys
-{
-	bool	w;
-	bool	a;
-	bool	s;
-	bool	d;
-	bool	left;
-	bool	right;
-}	t_keys;
 
 typedef struct s_textures
 {
@@ -50,9 +41,13 @@ typedef struct s_textures
 	int		height;
 }	t_textures;
 
-
 // init_game.c
 bool	init_game(t_game *game);
+
+// input.c
+int	key_press(int keycode, t_game *game);
+int	key_release(int keycode, t_game *game);
+int	close_window(t_game *game);
 
 // clean_central.c
 void	cleanup_game(t_game *game);

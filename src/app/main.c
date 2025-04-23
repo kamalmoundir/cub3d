@@ -8,9 +8,6 @@
 #include "mlx_wrapper.h"
 #include "map.h"
 
-static int	key_press(int keycode, t_game *game);
-static int	key_release(int keycode, t_game *game);
-static int	close_window(t_game *game);
 static int	game_loop(t_game *game);
 
 int	main(int argc, char **argv)
@@ -48,47 +45,5 @@ static int	game_loop(t_game *game)
 	}
 	update_player(game);
 	render_frame(game);
-	return (0);
-}
-
-static int	key_press(int keycode, t_game *game)
-{
-	if (keycode == XK_w)
-		game->keys.w = true;
-	else if (keycode == XK_a)
-		game->keys.a = true;
-	else if (keycode == XK_s)
-		game->keys.s = true;
-	else if (keycode == XK_d)
-		game->keys.d = true;
-	else if (keycode == XK_Left)
-		game->keys.left = true;
-	else if (keycode == XK_Right)
-		game->keys.right = true;
-	else if (keycode == XK_Escape)
-		game->running = false;
-	return (0);
-}
-
-static int	key_release(int keycode, t_game *game)
-{
-	if (keycode == XK_w)
-		game->keys.w = false;
-	else if (keycode == XK_a)
-		game->keys.a = false;
-	else if (keycode == XK_s)
-		game->keys.s = false;
-	else if (keycode == XK_d)
-		game->keys.d = false;
-	else if (keycode == XK_Left)
-		game->keys.left = false;
-	else if (keycode == XK_Right)
-		game->keys.right = false;
-	return (0);
-}
-
-static int	close_window(t_game *game)
-{
-	game->running = false;
 	return (0);
 }

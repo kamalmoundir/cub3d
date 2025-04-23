@@ -33,9 +33,8 @@ bool	init_game(t_game *game)
 		return (false);
 	}
 	game->running = true;
-	// PLACEHOLDER
-	// Initialize rest of objects here as well
-	// PLACEHOLDER
+	game->last_frame_time = get_time_ms();
+	game->frame_time = 0.0;
 	return (true);
 }
 

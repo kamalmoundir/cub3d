@@ -24,6 +24,7 @@ void	clear_buffer(t_game *game);
 void	draw_floor_ceiling(t_game *game);
 
 // render_core.c
+void	render_frame(t_game *game);
 bool	cast_all_rays(t_game *game);
 
 // render_utils.c

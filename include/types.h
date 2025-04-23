@@ -16,7 +16,6 @@ typedef struct s_player			t_player;
 typedef struct s_ray			t_ray;
 typedef struct s_map			t_map;
 typedef struct s_config			t_config;
-typedef struct s_keys			t_keys;
 typedef struct s_render_data	t_render_data;
 typedef struct s_textures		t_textures;
 
