@@ -28,7 +28,11 @@ int	key_press(int keycode, t_game *game)
 	else if (keycode == XK_Right)
 		game->player.rotate = 1;
 	else if (keycode == XK_Escape)
-		game->running = false;
+	{
+		ft_printf("Pressing Esc\n");
+		cleanup_game(game);
+		exit(0); // remove later and do proper cleaning
+	}
 	return (0);
 }
 

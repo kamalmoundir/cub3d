@@ -31,7 +31,6 @@ void	update_movement_speed(t_game *game)
 	current_time = get_time_ms();
 	game->frame_time = current_time - game->last_frame_time;
 	game->last_frame_time = current_time;
-
 	game->player.move_speed = game->frame_time * 0.005;
 	game->player.rot_speed = game->frame_time * 0.003;
 }

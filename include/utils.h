@@ -16,4 +16,8 @@ void	clear_error(t_error *error);
 int		max_int(int a, int b);
 double	get_time_ms(void);
 
+// debug_utils.c
+void	print_grid(int **grid, int height, int width);
+void	debug_render(t_game *game);
+
 #endif

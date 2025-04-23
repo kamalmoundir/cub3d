@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");
 		return (EXIT_FAILURE);
 	}
+	// print_grid(game.map.grid, game.map.height, game.map.width);
 	mlx_hook(game.mlx.win_ptr, 2, 1L<<0, key_press, &game);
 	mlx_hook(game.mlx.win_ptr, 3, 1L<<1, key_release, &game);
 	mlx_hook(game.mlx.win_ptr, 17, 0, close_window, &game);
@@ -44,6 +45,7 @@ static int	game_loop(t_game *game)
 		return (1);
 	}
 	update_player(game);
+	//debug_render(game);
 	render_frame(game);
 	return (0);
 }

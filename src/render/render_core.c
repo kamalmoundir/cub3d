@@ -19,7 +19,10 @@ void	render_frame(t_game *game)
 {
 	clear_buffer(game);
 	if (!cast_all_rays(game))
+	{
+		ft_printf("DEBUG: Error while casting rays\n");
 		return ;
+	}
 	draw_floor_ceiling(game);
 	mlx_put_image_to_window(game->mlx.mlx_ptr, game->mlx.win_ptr, game->mlx.img_ptr, 0, 0);
 }

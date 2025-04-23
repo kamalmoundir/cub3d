@@ -7,15 +7,33 @@ void	cleanup_game(t_game *game)
 {
 	int	i;
 	i = 0;
+	if (!game)
+		return ;
 	if (game->map.grid)
 	{
 		while (i < game->map.height)
+		{
 			safe_free((void **)&game->map.grid[i]);
+			i++;
+		}
 		safe_free((void **)&game->map.grid);
+	}
+	if (game->mlx.mlx_ptr)
+	{
+		if (game->mlx.img_ptr)
+		{
+			mlx_destroy_image(game->mlx.mlx_ptr, game->mlx.img_ptr);
+			game->mlx.img_ptr = NULL;
+		}
+		if (game->mlx.win_ptr)
+		{
+			mlx_destroy_window(game->mlx.mlx_ptr, game->mlx.win_ptr);
+			game->mlx.win_ptr = NULL;
+		}
+		mlx_destroy_display(game->mlx.mlx_ptr);
+		safe_free((void **)&game->mlx.mlx_ptr);
 	}
 	if (game->error.message)
 		safe_free((void **)&game->error.message);
-	// PLACEHOLDER
-	// Add cleanup for other resources
-	// PLACEHOLDER
+	game->running = false;
 }
