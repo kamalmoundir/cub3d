@@ -16,7 +16,7 @@ void	handle_critical_error(t_game *game)
 {
 	if (game->error.code == EXIT_FAILURE)
 	{
-		ft_printf(STDERR_FILENO, "Critical error encountered: %s\n",
+		ft_dprintf(STDERR_FILENO, "Critical error encountered: %s\n",
 			game->error.message);
 		game->running = false;
 	}

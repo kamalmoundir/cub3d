@@ -8,13 +8,10 @@
 #include "mlx_wrapper.h"
 
 static bool	init_mlx_wrapper(t_mlx *mlx_wrapper);
-static bool init_player(t_player *player);
 static bool	init_map(t_map *map);
 
 bool	init_game(t_game *game)
 {
-	t_error	*error;
-
 	game->error.message = NULL;
 	game->error.code = 0;
 	if (!init_mlx_wrapper(&game->mlx))
@@ -35,17 +32,6 @@ bool	init_game(t_game *game)
 	game->running = true;
 	game->last_frame_time = get_time_ms();
 	game->frame_time = 0.0;
-	return (true);
-}
-
-static bool init_player(t_player *player) // example only, will feed from parser later
-{
-	player->position.x = 2.5;
-	player->position.y = 2.5;
-	player->direction.x = -1.0;
-	player->direction.y = 0.0;
-	player->plane.x = 0.0;
-	player->plane.y = 0.66;
 	return (true);
 }
 
@@ -84,6 +70,7 @@ static bool	init_map(t_map *map) // refactor later and connect to parser
 	map->width = CUB3D_MAP_WIDTH;
 	map->height = CUB3D_MAP_HEIGHT;
 	map->grid = malloc(map->height * sizeof(int *));
+	map->path = NULL;
 	if (!map->grid)
 		return (false);
 	i = 0;
@@ -93,11 +80,8 @@ static bool	init_map(t_map *map) // refactor later and connect to parser
 		map->grid[i] = malloc(map->width * sizeof(int));
 		if (!map->grid[i]) // improve the error handling later, refactor it into separate function
 		{
-			while (j < i)
-			{
-				safe_free((void **)&map->grid[j]);
-				j++;
-			}
+			while (--i >= 0)
+				safe_free((void **)&map->grid[i]);
 			safe_free((void **)map->grid);
 			return (false);
 		}

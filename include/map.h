@@ -5,9 +5,10 @@
 
 typedef struct s_map
 {
-	int	width;
-	int	height;
-	int	**grid;
+	int		**grid;
+	int		width;
+	int		height;
+	char	*path;
 }	t_map;
 
 #endif

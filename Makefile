@@ -19,7 +19,7 @@ SRC						=	$(SRC_DIR)/app/main.c							\
 							$(SRC_DIR)/player/player_update.c				\
 							$(SRC_DIR)/player/player_movement.c				\
 							$(SRC_DIR)/player/player_collision.c			\
-							$(SRC_DIR)/raycasting_engine/init_ray.c			\
+							$(SRC_DIR)/raycasting_engine/ray_setup.c		\
 							$(SRC_DIR)/raycasting_engine/raycasting_dda.c	\
 							$(SRC_DIR)/raycasting_engine/raycasting_utils.c	\
 							$(SRC_DIR)/render/render_buffer.c				\
