@@ -44,6 +44,7 @@ bool	cast_all_rays(t_game *game)
 		calculate_wall_distance(&game->player, &game->ray);
 		draw_wall_slice(game, x);
 		x++;
+		ft_printf("x=%d\n", x);
 	}
 	return (true);
 }
