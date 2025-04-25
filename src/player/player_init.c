@@ -19,7 +19,7 @@ bool	init_player(t_player *player)
 	player->direction.x = -1.0;
 	player->direction.y = 0.0;
 	player->plane.x = 0.0;
-	player->plane.x = 0.66;
+	player->plane.y = 0.66;
 	player->move_speed = 0.05;
 	player->rot_speed = 0.03;
 	player->move_forward = 0;

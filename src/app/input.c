@@ -24,9 +24,9 @@ int	key_press(int keycode, t_game *game)
 	else if (keycode == XK_d)
 		game->player.move_sideways = 1;
 	else if (keycode == XK_Left)
-		game->player.rotate = -1;
-	else if (keycode == XK_Right)
 		game->player.rotate = 1;
+	else if (keycode == XK_Right)
+		game->player.rotate = -1;
 	else if (keycode == XK_Escape)
 	{
 		ft_printf("Pressing Esc\n");
