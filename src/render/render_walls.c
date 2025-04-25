@@ -27,7 +27,6 @@ void	draw_wall_slice(t_game *game, int x)
 	if (wall_line.end >= game->mlx.height)
 		wall_line.end = game->mlx.height - 1;
 	color = select_wall_color(game, &game->ray);
-	ft_printf("color selected: %d\n", color);
 	draw_vertical_line(game, x, wall_line, color);
 }
 

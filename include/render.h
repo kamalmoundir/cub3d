@@ -21,11 +21,11 @@ typedef struct	s_render_data
 
 // render_buffer.c
 void	clear_buffer(t_game *game);
-void	draw_floor_ceiling(t_game *game);
+void	draw_floor_ceiling(t_game *game, t_line *wall_lines);
 
 // render_core.c
 void	render_frame(t_game *game);
-bool	cast_all_rays(t_game *game);
+bool	cast_all_rays(t_game *game, t_line *wall_lines);
 
 // render_utils.c
 void	draw_vertical_line(t_game *game, int x, t_line line, int color);

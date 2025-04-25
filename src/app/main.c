@@ -45,7 +45,7 @@ static int	game_loop(t_game *game)
 		return (1);
 	}
 	update_player(game);
-	//debug_render(game);
+	// debug_render(game);
 	render_frame(game);
 	return (0);
 }
