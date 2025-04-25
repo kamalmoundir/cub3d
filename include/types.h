@@ -7,8 +7,8 @@
 
 # define CUB3D_MAP_WIDTH 24
 # define CUB3D_MAP_HEIGHT 24
-# define CUB3D_SCREEN_WIDTH 640
-# define CUB3D_SCREEN_HEIGHT 480
+# define CUB3D_SCREEN_WIDTH 1800
+# define CUB3D_SCREEN_HEIGHT 1500
 
 typedef struct s_game			t_game;
 typedef struct s_mlx			t_mlx;

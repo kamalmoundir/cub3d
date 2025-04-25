@@ -29,25 +29,41 @@ void	clear_buffer(t_game *game)
 	}
 }
 
-void	draw_floor_ceiling(t_game *game)
+void	draw_floor_ceiling(t_game *game, t_line *wall_lines)
 {
 	int	x;
 	int	y;
 	int	*buffer;
+	int	index;
+	int	wall_start;
+	int	wall_end;
 
+	if (!wall_lines || !game->mlx.img_data)
+		return ;
 	buffer = (int *)game->mlx.img_data;
-	y = 0;
-	while (y < game->mlx.height)
+	x = 0;
+	while (x < game->mlx.width)
 	{
-		x = 0;
-		while (x < game->mlx.width)
+		wall_start = wall_lines[x].start;
+		if (wall_start < 0)
+			wall_start = 0;
+		wall_end = wall_lines[x].end;
+		if (wall_end >= game->mlx.height)
+			wall_end = game->mlx.height - 1;
+		y = 0;
+		while (y < wall_start)
 		{
-			if (y < game->mlx.height / 2)
-				buffer[y * game->mlx.width + x] = game->ceiling_color;
-			else
-				buffer[y * game->mlx.width + x] = game->floor_color;
-			x++;
+			index = y * game->mlx.width + x;
+			buffer[index] = game->ceiling_color;
+			y++;
 		}
-		y++;
+		y = wall_end + 1;
+		while (y < game->mlx.height)
+		{
+			index = y * game->mlx.width + x;
+			buffer[index] = game->floor_color;
+			y++;
+		}
+		x++;
 	}
 }
