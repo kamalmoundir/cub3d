@@ -6,11 +6,12 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:04:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/31 16:06:57 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/01 17:34:48 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "game.h"
+#include "gnl.h"
 
 char	*ft_strjoin_gnl(char *s1, char *s2)
 {
