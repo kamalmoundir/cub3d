@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:54:25 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 18:22:20 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/02 12:52:53 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	path_finder(char **map, int x, int y)
 	path_finder(map, x, y - 1);
 }
 
-//should be inittilize  plyer struct befor call this function
+//should be initialize  player struct befor call this function
 bool get_player_pos_dir(t_map *map, t_player *player)
 {
     int i;

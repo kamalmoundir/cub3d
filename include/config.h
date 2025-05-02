@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:30:00 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 18:40:27 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/02 12:16:28 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ bool	init_def_config(t_config *config);
 int	parse_config_line(char *line, t_config *config);
 int	parse_texture_path(char *line, char **texture_path);
 int parse_color(char *line, t_color *color);
-int validate_config(t_config *config);
+bool validate_config(t_config *config);
 bool extract_config(char **raw_lines,t_config *config);
 void free_config(t_config *config);
 

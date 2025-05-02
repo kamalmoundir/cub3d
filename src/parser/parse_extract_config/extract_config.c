@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:35:34 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 18:40:02 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/02 12:20:54 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool extract_config(char **raw_lines, t_config *config)
 
 	i = 0;
 	config_count = 0;
-	//initialize_config(config); initialize it befor function called
+	//initialize_config(config); initialize it befor function calle
 	while (raw_lines[i])
 	{
 		if (is_empty_line(raw_lines[i]))
