@@ -6,12 +6,14 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:29:23 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/09 13:51:23 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/01 17:34:24 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "cub3d.h"
+#include "game.h"
+#include "gnl.h"
+
 
 char	*ft_get_line(int fd, char *line)
 {
@@ -94,36 +96,7 @@ char	*get_next_line(int fd)
 	rest = ft_get_rest_line(rest);
 	return (line);
 }
-//todo we can claculate number of lines in the file and malloc the array with that size
 
-char	**array_map(int fd)
-{
-	char	**map;
-	int		i;
-	char	*line;
-
-	i = 0;
-	map = (char **)malloc(1000 * sizeof(char *));
-	if (!map)
-		return (NULL);
-	line = get_next_line(fd);
-	while (line != NULL)
-	{
-		map[i] = (char *)malloc(1000 * sizeof(char));
-		if (!map[i])
-		{
-			while (i >= 0)
-				free(map[i--]);
-			return (free(map), NULL);
-		}
-		ft_strlcpy_gnl(map[i], line, ft_strlen(line));
-		free(line);
-		line = get_next_line(fd);
-		i++;
-	}
-	map[i] = NULL;
-	return (map);
-}
 /*
 #include <stdio.h>
 

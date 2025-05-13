@@ -1,0 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   textures_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/25 20:08:42 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/05/01 18:26:37 by kmoundir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "game.h"
+#include "config.h"
+
+bool verify_texture_file(char *texture_path)
+{
+    int fd;
+    
+    fd = open(texture_path, O_RDONLY);
+    if (fd == -1)
+        return (false);
+    close(fd);
+    return (true);
+}
