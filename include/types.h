@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   types.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 14:50:12 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/13 14:50:16 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TYPES_H
 # define TYPES_H
 
@@ -18,6 +30,8 @@ typedef struct s_map			t_map;
 typedef struct s_config			t_config;
 typedef struct s_render_data	t_render_data;
 typedef struct s_textures		t_textures;
+typedef struct s_keys			t_keys;
+typedef struct s_color			t_color;
 
 typedef struct	s_vec2
 {

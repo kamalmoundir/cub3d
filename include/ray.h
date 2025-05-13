@@ -26,4 +26,7 @@ bool	perform_dda(t_map *map, t_ray *ray, t_error *error);
 // raycasting_utils.c
 void	calculate_wall_distance(t_player *player, t_ray *ray);
 
+// initialize ray struct with default values 
+bool	init_def_ray(t_ray *ray);
+
 #endif
