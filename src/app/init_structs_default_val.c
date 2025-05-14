@@ -26,8 +26,15 @@ bool	init_def_player(t_player *player)
 	player->plane.x = -1;
 	player->plane.y = -1;
 	player->init_dir = '\0';
-	player->move_speed = 0;
-	player->rot_speed = 0;
+	player->move_speed = 0.05;
+	player->rot_speed = 0.03;
+	player->move_forward = 0;
+	player->move_sideways = 0;
+	player->rotate = 0;
+	player->health = 100;
+	player->stamina = 100;
+	player->has_key = false;
+	player->score = 0;
 	return (true);
 }
 
