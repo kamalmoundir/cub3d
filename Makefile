@@ -43,8 +43,7 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/parser/parse_extract_map_grid/extract_grid.c	\
 							$(SRC_DIR)/util/free_struct.c							\
 							$(SRC_DIR)/util/validate_input.c						\
-							$(SRC_DIR)/app/init_structs_default_val.c				\
-							$(SRC_DIR)/main.c
+							$(SRC_DIR)/app/init_structs_default_val.c
 
 
 TOTAL_SRC_FILES			:=	$(words $(SRC))
@@ -109,10 +108,16 @@ $(TEST_OBJ)				:	$(TEST_OBJ_DIR)
 $(OBJ_DIR)				:	
 							@mkdir -p $(OBJ_DIR)
 							@mkdir -p $(OBJ_DIR)/app
+							@mkdir -p $(OBJ_DIR)/error_handler
+							@mkdir -p $(OBJ_DIR)/get_next_line
 							@mkdir -p $(OBJ_DIR)/parse
+							@mkdir -p $(OBJ_DIR)/parser
+							@mkdir -p $(OBJ_DIR)/parser/parse_extract_config
+							@mkdir -p $(OBJ_DIR)/parser/parse_extract_map_grid
 							@mkdir -p $(OBJ_DIR)/player
 							@mkdir -p $(OBJ_DIR)/raycasting_engine
 							@mkdir -p $(OBJ_DIR)/render
+							@mkdir -p $(OBJ_DIR)/util
 							@mkdir -p $(OBJ_DIR)/utils
 
 #	test

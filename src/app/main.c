@@ -12,16 +12,16 @@ static int	game_loop(t_game *game);
 
 int	main(int argc, char **argv)
 {
-	t_game	game;
+	t_game		game;
 
-	if (argc != 2)
-	{
-		ft_dprintf(STDERR_FILENO, "Allowed Format: %s <map_file.cub>\n", argv[0]);
-		return (EXIT_FAILURE);
-	}
+	if (argc != 2 || !argv[1])
+		return (1);
+	if(!validate_input("assets/maps/map1.cub"))
+    {
+        ft_printf("Failed to validate input\n");
+        return (1);
+    }
 	ft_memset(&game, 0, sizeof(t_game));
-	// if (!parse_arguments(argc, argv, &game))
-	//	return (EXIT_FAILURE);
 	if (!init_game(&game))
 	{
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");
