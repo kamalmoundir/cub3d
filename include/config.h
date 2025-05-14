@@ -44,7 +44,7 @@ int     rgb_to_int(t_color color);
 
 //initialize cinfig struct by default value
 bool	init_def_config(t_config *config);
-
+bool    init_config(t_config *config, char **data_raw);
 
 int	    parse_config_line(char *line, t_config *config);
 int	    parse_texture_path(char *line, char **texture_path);

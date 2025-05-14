@@ -16,11 +16,13 @@ int	main(int argc, char **argv)
 
 	if (argc != 2 || !argv[1])
 		return (1);
-	if(!validate_input("assets/maps/map1.cub"))
+	/*
+		if(!validate_input("assets/maps/map2.cub"))
     {
         ft_printf("Failed to validate input\n");
         return (1);
     }
+	*/
 	ft_memset(&game, 0, sizeof(t_game));
 	if (!init_game(&game))
 	{

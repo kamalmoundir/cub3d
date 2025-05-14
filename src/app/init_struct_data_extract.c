@@ -25,8 +25,9 @@ bool init_map(t_map *map, char **data_raw, char *path)
         return (printf("error extract map from data raw\n"),false);
     map->height = get_map_hight(map);
     map->width = get_map_width(map);
-    if(get_map_path(path,map))
+    if(!get_map_path(path,map))
         return(printf("ERROR get map path\n"),false);
+    return (true);
 }
 
 //initialize config struct

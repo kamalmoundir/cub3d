@@ -85,7 +85,6 @@ bool	is_map_line(const char *line);
 bool	ft_extract_map(char **raw_lines, t_map *map);
 int		is_empty_line(const char *line);
 bool	validate_input(char *path);
-void	safe_free(void **ptr);
 
 
 #endif

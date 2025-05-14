@@ -26,6 +26,9 @@ bool	init_player(t_player *player);
 // parser/parse_extract_map_grid/map_parser.c
 bool	get_player_pos_dir(t_map *map, t_player *player);
 
+// app/init_structs_default_val.c
+bool	init_def_player(t_player *player);
+
 // init_player.c
 bool	initialize_player(t_map *map, t_player *player);
 

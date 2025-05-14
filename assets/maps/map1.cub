@@ -1,10 +1,10 @@
 C 0,0,0
 F 0,0,0 
 
-EA assets/textures/brickwall.png
-NO assets/textures/brickwall.png
-SO assets/textures/brickwall.png
-WE assets/textures/brickwall.png
+EA assets/textures/east_texture.png
+NO assets/textures/north_texture.png
+SO assets/textures/south_texture.png
+WE assets/textures/west_texture.png
 
 
 1111111111111111111111111111111111111111

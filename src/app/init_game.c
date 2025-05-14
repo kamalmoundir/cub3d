@@ -17,7 +17,7 @@ bool	init_game(t_game *game)
 		return (false);
 	}
     init_def_map(&game->map);
-    if (!ft_extract_map(data_raw, &game->map))
+    if (!init_map(&game->map, data_raw, "assets/maps/map1.cub"))
 	{
 		set_error(&game->error, "Failed to extract map", 1);
 		free_array(data_raw);
@@ -25,7 +25,7 @@ bool	init_game(t_game *game)
 		return (false);
 	}
     init_def_config(&game->config);
-    if (!extract_config(data_raw, &game->config)) 
+	if (!init_config(&game->config, data_raw))
     {
         set_error(&game->error, "Config extraction failed", 1);
 		free_array(data_raw);
