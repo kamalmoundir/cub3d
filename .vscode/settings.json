@@ -3,6 +3,7 @@
 		"player.h": "c",
 		"math.h": "c",
 		"game.h": "c",
-		"render.h": "c"
+		"render.h": "c",
+		"ray.h": "c"
 	}
 }

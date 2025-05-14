@@ -39,7 +39,6 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/parser/parse_extract_config/textures_utils.c	\
 							$(SRC_DIR)/parser/parse_extract_config/extract_config.c	\
 							$(SRC_DIR)/util/validate_utils.c						\
-							$(SRC_DIR)/util/memory_utils.c							\
 							$(SRC_DIR)/parser/parse_extract_map_grid/extract_grid.c	\
 							$(SRC_DIR)/util/free_struct.c							\
 							$(SRC_DIR)/util/validate_input.c						\

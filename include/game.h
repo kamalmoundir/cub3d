@@ -45,8 +45,6 @@ typedef struct	s_game
 	t_error			error;
 	double			last_frame_time;
 	double			frame_time;
-	int				floor_color;
-	int				ceiling_color;
 	bool			running;
 	//t_textures		textures;
 }	t_game;
@@ -88,6 +86,6 @@ bool	ft_extract_map(char **raw_lines, t_map *map);
 int		is_empty_line(const char *line);
 bool	validate_input(char *path);
 void	safe_free(void **ptr);
-bool 	init_def_game(t_game *game);
+
 
 #endif

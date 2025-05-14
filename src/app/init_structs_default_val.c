@@ -15,22 +15,6 @@
 #include "player.h"
 #include "game.h"
 
-// TODO add other data
-
-bool init_def_game(t_game *game)
-{
-    if(!game)
-        return (false);
-    game->config = NULL;
-    game->map = NULL;
-    game->mlx = NULL;
-    game->mlx_win = NULL;
-    game->player = NULL;
-    game->ray = NULL;
-    game->height = 0;
-    game->width = 0;
-    return(true);
-}
 bool	init_def_player(t_player *player)
 {
 	if (!player)
@@ -55,7 +39,7 @@ bool	init_def_map(t_map *map)
 	map->grid = NULL;
 	map->height = 0;
 	map->width = 0;
-	map->path ='\0';
+	map->path = NULL;
 	return (true);
 }
 

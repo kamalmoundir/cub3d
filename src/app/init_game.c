@@ -1,11 +1,6 @@
 #include <math.h>
-#include "types.h"
-#include "player.h"
-#include "map.h"
-#include "ray.h"
-#include "utils.h"
 #include "game.h"
-#include "mlx_wrapper.h"
+
 
 static bool	init_mlx_wrapper(t_mlx *mlx_wrapper);
 
@@ -44,7 +39,7 @@ bool	init_game(t_game *game)
 		cleanup_game(game);
 		return (false);
 	}
-	if (!init_player(&game->player))
+	if (!initialize_player(&game->map, &game->player))
 	{
 		set_error(&game->error, "Failed to initialize player", 1);
 		cleanup_game(game);

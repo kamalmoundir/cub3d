@@ -13,6 +13,7 @@
 #include "config.h"
 #include "map.h"
 #include "utils.h"
+#include "player.h"
 
 static void	free_data(t_config *config, t_map *map, char **data_raw)
 {

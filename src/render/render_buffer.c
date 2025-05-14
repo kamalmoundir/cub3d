@@ -37,9 +37,13 @@ void	draw_floor_ceiling(t_game *game, t_line *wall_lines)
 	int	index;
 	int	wall_start;
 	int	wall_end;
+	int	floor_color;
+	int	ceiling_color;
 
 	if (!wall_lines || !game->mlx.img_data)
 		return ;
+	floor_color = rgb_to_int(game->config.floor_color);
+	ceiling_color = rgb_to_int(game->config.ceiling_color);
 	buffer = (int *)game->mlx.img_data;
 	x = 0;
 	while (x < game->mlx.width)
@@ -54,14 +58,14 @@ void	draw_floor_ceiling(t_game *game, t_line *wall_lines)
 		while (y < wall_start)
 		{
 			index = y * game->mlx.width + x;
-			buffer[index] = game->ceiling_color;
+			buffer[index] = ceiling_color;
 			y++;
 		}
 		y = wall_end + 1;
 		while (y < game->mlx.height)
 		{
 			index = y * game->mlx.width + x;
-			buffer[index] = game->floor_color;
+			buffer[index] = floor_color;
 			y++;
 		}
 		x++;
