@@ -59,6 +59,7 @@ static bool	set_player_orientation(t_player *player)
 	}
 	else
 		return (false);
+	printf("player_init_dir: %c, x: %f, y: %f\n", player->init_dir, player->direction.x, player->direction.y);
 	return (true);
 }
 

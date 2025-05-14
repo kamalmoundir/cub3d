@@ -14,6 +14,7 @@
 #include "game.h"
 #include "ray.h"
 #include "utils.h"
+#include "config.h"
 
 void	render_frame(t_game *game)
 {

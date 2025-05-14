@@ -25,14 +25,21 @@ bool extract_config(char **raw_lines, t_config *config)
 		if (is_empty_line(raw_lines[i]))
 			i++;
 		if (is_map_line(raw_lines[i]))
+		{
+			printf("raw_lines: %s\n", raw_lines[i]);
+			printf("is_map_line\n");
 			break ;
+		}
 		if (parse_config_line(raw_lines[i], config))
 			config_count++;
 
 		i++;
 	}
 	if (config_count < 6)
+	{
+		printf("Config count: %d", config_count);
 		return (false);
+	}
 
 	return (true);
 }

@@ -61,6 +61,7 @@ int	parse_texture_path(char *line, char **texture_path)
 
 int	parse_config_line(char *line, t_config *config)
 {
+	printf("line: %s\n", line);
 	if (ft_strncmp(line, "NO ", 3) == 0)
 		return (parse_texture_path(line + 3, &config->north_texture));
 	else if (ft_strncmp(line, "SO ", 3) == 0)
@@ -84,11 +85,11 @@ bool	validate_config(t_config *config)
 	if (!is_valid_color(config->floor_color.r, config->floor_color.g,
 			config->floor_color.b) || !is_valid_color(config->ceiling_color.r,
 			config->ceiling_color.g, config->ceiling_color.b))
-		return (printf("1\n"), false);
+		return (printf("2\n"), false);
 	if (!verify_texture_file(config->north_texture)
 		|| !verify_texture_file(config->south_texture)
 		|| !verify_texture_file(config->east_texture)
 		|| !verify_texture_file(config->west_texture))
-		return (printf("1\n"), false);
+		return (printf("3\n"), false);
 	return (true);
 }
