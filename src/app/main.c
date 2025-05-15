@@ -16,19 +16,18 @@ int	main(int argc, char **argv)
 
 	if (argc != 2 || !argv[1])
 		return (1);
-	if(!validate_input("assets/maps/map1.cub"))
+	/*if(!validate_input("assets/maps/map1.cub"))
     {
         ft_printf("Failed to validate input\n");
         return (1);
-    }
+    }*/
 	ft_memset(&game, 0, sizeof(t_game));
 	if (!init_game(&game))
 	{
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");
 		return (EXIT_FAILURE);
 	}
-	
-	printf("player_init_dir: %c, x: %f, y: %f\n", game.player.init_dir, game.player.position.x, game.player.position.y);
+	//printf("player_init_dir: %c, x: %f, y: %f\n", game.player.init_dir, game.player.position.x, game.player.position.y);
 	printf("floor-r: %d, floor-g: %d, floor-b: %d\n", game.config.floor_color.r, game.config.floor_color.g, game.config.floor_color.b);
 	printf("config-W: %s\n", game.config.west_texture);
 	// print_grid(game.map.grid, game.map.height, game.map.width);
@@ -41,8 +40,6 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-
-
 static int	game_loop(t_game *game)
 {
 	if (!game->running)
@@ -53,14 +50,6 @@ static int	game_loop(t_game *game)
 	update_player(game);
 	// debug_render(game);
 	//printf("player_init_dir: %c, x: %f, y: %f\n", game->player.init_dir, game->player.position.x, game->player.position.y);
-	for(int i=0;i< game->map.height; i++)
-	{
-	 for(int j=0;j<game->map.width; j++)
-	  {
-		printf("[%c]",game->map.grid[i][j]);
-	  }
-	  printf("\n");
-	}
 	render_frame(game);
 	return (0);
 }

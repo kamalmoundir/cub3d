@@ -61,6 +61,6 @@ static bool	dda_step(t_map *map, t_ray *ray, int *hit, t_error *error)
 		set_error(error, "Raycasting out of bounds", 2);
 		return (false);
 	}
-	*hit = (map->grid[ray->mapY][ray->mapX] != '0');
+	*hit = (map->grid[ray->mapY][ray->mapX] == '1');
 	return (true);
 }
