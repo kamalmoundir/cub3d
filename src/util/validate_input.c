@@ -37,6 +37,7 @@ static bool validate_map_path(t_map *map, t_player player)
     map->copy_grid = copy_map(map->grid, get_map_hight(map));
     if (!map->copy_grid)
         return (printf("error copy grid\n"),false);
+    printf("redrererererr  %s  x=%f   y=%f   \n",map->copy_grid[1],player.position.x,player.position.y);
     path_finder(map->copy_grid, player.position.x, player.position.y);
     if (check_unreacheble_area(map))
         return (printf("error unreacheble area\n"),false);

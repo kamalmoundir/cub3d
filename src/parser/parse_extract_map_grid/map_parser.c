@@ -50,7 +50,7 @@ void	path_finder(char **map, int x, int y)
 {
 	if (map == NULL)
 		return ;
-	if (x < 0 || x >= (int)ft_strlen(map[y]) || y < 0 || !map[y]
+	if (x < 0 || x > (int)ft_strlen(map[y]) || y < 0 || !map[y]
 		|| map[y][x] == '1' || map[y][x] == 'V' || map[y][x] == ' ')
 		return ;
 	map[y][x] = 'V';
@@ -82,10 +82,12 @@ bool get_player_pos_dir(t_map *map, t_player *player)
                 player->position.x= i;
                 player->position.y= j;
                 player->init_dir = map->grid[i][j];
+				printf("i = %d, j = %d\n", i, j);
                 found = 1;
             }
         }
     }
+	
     return (true);
 }
 
