@@ -49,6 +49,7 @@ static int	game_loop(t_game *game)
 	}
 	update_player(game);
 	// debug_render(game);
+	//printf("player_init_dir: %c, x: %f, y: %f\n", game->player.init_dir, game->player.position.x, game->player.position.y);
 	render_frame(game);
 	return (0);
 }

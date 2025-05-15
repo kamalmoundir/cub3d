@@ -33,11 +33,11 @@ void	draw_wall_slice(t_game *game, int x)
 // to be expanded on later
 int	select_wall_color(t_game *game, t_ray *ray)
 {
-	int	color;
-	int	wall_value;
+	int		color;
+	char	wall_value;
 
 	wall_value = game->map.grid[ray->mapY][ray->mapX];
-	if (wall_value == 1) // Standard wall
+	if (wall_value == '1') // Standard wall
 	{
 		if (ray->side == 0) // Red (E/W)
 		{
