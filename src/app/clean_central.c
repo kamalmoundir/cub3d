@@ -31,6 +31,14 @@ void	cleanup_game(t_game *game)
 			mlx_destroy_window(game->mlx.mlx_ptr, game->mlx.win_ptr);
 			game->mlx.win_ptr = NULL;
 		}
+		if (game->textures.north.img)
+			mlx_destroy_image(game->mlx.mlx_ptr, game->textures.north.img);
+		if (game->textures.south.img)
+			mlx_destroy_image(game->mlx.mlx_ptr, game->textures.south.img);
+		if (game->textures.east.img)
+			mlx_destroy_image(game->mlx.mlx_ptr, game->textures.east.img);
+		if (game->textures.west.img)
+			mlx_destroy_image(game->mlx.mlx_ptr, game->textures.west.img);
 		mlx_destroy_display(game->mlx.mlx_ptr);
 		safe_free((void **)&game->mlx.mlx_ptr);
 	}
