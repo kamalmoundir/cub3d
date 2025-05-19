@@ -1,6 +1,6 @@
 #include <math.h>
 #include "game.h"
-
+#include "render.h"
 
 static bool	init_mlx_wrapper(t_mlx *mlx_wrapper);
 
@@ -39,12 +39,12 @@ bool	init_game(t_game *game)
 		cleanup_game(game);
 		return (false);
 	}
-	/*if(!load_all_textures(game))
+	if(!load_all_textures(game))
 	{
 		set_error(&game->error, "Faild to load textures", 1);
 		cleanup_game(game);
 		return (false);
-	}*/
+	}
 	if (!initialize_player(&game->map, &game->player))
 	{
 		set_error(&game->error, "Failed to initialize player", 1);

@@ -1,10 +1,6 @@
 {
 	"files.associations": {
-		"player.h": "c",
-		"math.h": "c",
-		"game.h": "c",
-		"render.h": "c",
-		"ray.h": "c",
-		"types.h": "c"
+		"config.h": "c",
+		"game.h": "c"
 	}
 }
