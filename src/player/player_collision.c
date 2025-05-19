@@ -19,7 +19,7 @@ bool	is_wall(t_game *game, double x, double y)
 	int		map_y;
 	double	buffer;
 
-	buffer = 0.05; // small buffer distance to avoid sliding along walls
+	buffer = 0.2; // small buffer distance to avoid sliding along walls
 	if (x - buffer < 0 || x + buffer >= game->map.width
 		|| y - buffer < 0 || y + buffer >= game->map.height)
 		return (true);
