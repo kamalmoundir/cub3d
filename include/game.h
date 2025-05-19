@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 11:37:11 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/02 14:38:26 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:03:24 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,9 @@ typedef struct	s_game
 	double			last_frame_time;
 	double			frame_time;
 	bool			running;
-	//t_textures		textures;
+	t_textures		textures;
 }	t_game;
 
-typedef struct s_textures
-{
-	void	*wall_n;
-	void	*wall_s;
-	void	*wall_e;
-	void	*wall_w;
-	void	*wall_n_data;
-	void	*wall_s_data;
-	void	*wall_e_data;
-	void	*wall_w_data;
-	int		width;
-	int		height;
-}	t_textures;
 
 // init_game.c
 bool	init_game(t_game *game);

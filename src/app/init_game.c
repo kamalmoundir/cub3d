@@ -39,6 +39,12 @@ bool	init_game(t_game *game)
 		cleanup_game(game);
 		return (false);
 	}
+	/*if(!load_all_textures(game))
+	{
+		set_error(&game->error, "Faild to load textures", 1);
+		cleanup_game(game);
+		return (false);
+	}*/
 	if (!initialize_player(&game->map, &game->player))
 	{
 		set_error(&game->error, "Failed to initialize player", 1);

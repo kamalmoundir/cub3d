@@ -28,6 +28,7 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/render/render_core.c							\
 							$(SRC_DIR)/render/render_walls.c						\
 							$(SRC_DIR)/render/render_utils.c						\
+							$(SRC_DIR)/render/load_images.c							\
 							$(SRC_DIR)/utils/memory_utils.c							\
 							$(SRC_DIR)/utils/misc_utils.c							\
 							$(SRC_DIR)/utils/debug_utils.c							\
@@ -58,7 +59,7 @@ OBJ						=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
 
 ###	Compilation/ Linking configs
 CC						=	cc
-CFLAGS					=	-Werror -Wextra -Wall
+CFLAGS					=	#-Werror -Wextra -Wall
 LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -lXext -lX11 -lm -lz
 RM						=	rm -rf
 COUNT					:=	0

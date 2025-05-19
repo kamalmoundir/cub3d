@@ -19,5 +19,5 @@ double	get_time_ms(void);
 // debug_utils.c
 void	print_grid(int **grid, int height, int width);
 void	debug_render(t_game *game);
-
+void    ft_print_str(char **str);
 #endif

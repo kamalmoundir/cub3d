@@ -4,6 +4,7 @@
 		"math.h": "c",
 		"game.h": "c",
 		"render.h": "c",
-		"ray.h": "c"
+		"ray.h": "c",
+		"types.h": "c"
 	}
 }

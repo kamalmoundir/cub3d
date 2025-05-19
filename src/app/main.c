@@ -16,11 +16,11 @@ int	main(int argc, char **argv)
 
 	if (argc != 2 || !argv[1])
 		return (1);
-	/*if(!validate_input("assets/maps/map1.cub"))
+	if(!validate_input("assets/maps/map1.cub"))
     {
         ft_printf("Failed to validate input\n");
         return (1);
-    }*/
+    }
 	ft_memset(&game, 0, sizeof(t_game));
 	if (!init_game(&game))
 	{
@@ -28,9 +28,9 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	//printf("player_init_dir: %c, x: %f, y: %f\n", game.player.init_dir, game.player.position.x, game.player.position.y);
-	printf("floor-r: %d, floor-g: %d, floor-b: %d\n", game.config.floor_color.r, game.config.floor_color.g, game.config.floor_color.b);
-	printf("config-W: %s\n", game.config.west_texture);
-	// print_grid(game.map.grid, game.map.height, game.map.width);
+//	printf("floor-r: %d, floor-g: %d, floor-b: %d\n", game.config.floor_color.r, game.config.floor_color.g, game.config.floor_color.b);
+//	printf("config-W: %s\n", game.config.west_texture);
+	ft_print_str(game.map.grid);
 	mlx_hook(game.mlx.win_ptr, 2, 1L<<0, key_press, &game);
 	mlx_hook(game.mlx.win_ptr, 3, 1L<<1, key_release, &game);
 	mlx_hook(game.mlx.win_ptr, 17, 0, close_window, &game);
@@ -48,8 +48,9 @@ static int	game_loop(t_game *game)
 		return (1);
 	}
 	update_player(game);
-	// debug_render(game);
-	//printf("player_init_dir: %c, x: %f, y: %f\n", game->player.init_dir, game->player.position.x, game->player.position.y);
+
+	debug_render(game);
+	printf("player_init_dir: %c, x: %0.2f, y: %0.2f\n", game->player.init_dir, game->player.position.x, game->player.position.y);
 	render_frame(game);
 	return (0);
 }
