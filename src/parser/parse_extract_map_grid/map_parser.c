@@ -96,8 +96,8 @@ bool get_player_pos_dir(t_map *map, t_player *player)
             {
                 if (found)
                     return (false); 
-                player->position.x= j;
-                player->position.y= i;
+                player->position.x= j + 0.5;
+                player->position.y= i + 0.5;
                 player->init_dir = map->grid[i][j];
 				printf("i = %d, j = %d\n", i, j);
                 found = 1;
