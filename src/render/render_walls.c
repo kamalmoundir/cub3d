@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   render_walls.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 23:30:03 by sstoev            #+#    #+#             */
-/*   Updated: 2025/04/22 23:30:05 by sstoev           ###   ########.fr       */
+/*   Updated: 2025/05/19 13:13:49 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "render.h"
 #include "game.h"
+
 
 void	draw_wall_slice(t_game *game, int x)
 {
@@ -44,14 +45,14 @@ int	select_wall_color(t_game *game, t_ray *ray)
 			if (ray->stepX > 0)
 				color = 0xFF0000;
 			else
-				color = 0xCC0000;
+				color = 0xCC99AA;
 		}
 		else // Green (N/S)
 		{
 			if (ray->stepY > 0)
-				color = 0x00FF00;
+				color = 0x00FF55;
 			else
-				color = 0x00CC00;
+				color = 0x00CCFF;
 		}
 	}
 	else

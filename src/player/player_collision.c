@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_collision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:08:21 by sstoev            #+#    #+#             */
-/*   Updated: 2025/04/23 16:08:22 by sstoev           ###   ########.fr       */
+/*   Updated: 2025/05/19 15:52:39 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	is_wall(t_game *game, double x, double y)
 	int		map_y;
 	double	buffer;
 
-	buffer = 0.1; // small buffer distance to avoid sliding along walls
+	buffer = 0.05; // small buffer distance to avoid sliding along walls
 	if (x - buffer < 0 || x + buffer >= game->map.width
 		|| y - buffer < 0 || y + buffer >= game->map.height)
 		return (true);

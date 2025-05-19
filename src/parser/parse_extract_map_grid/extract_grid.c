@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:42:52 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 17:14:34 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:55:51 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ static void 	ft_copy_map(char **raw_lines, char **grid, const int start_index,
 		}
 	}
     grid[i] = NULL;
+
+		
+
+	
 }
 
 bool ft_extract_map(char **raw_lines,t_map *map)

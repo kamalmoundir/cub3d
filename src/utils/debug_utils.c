@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 22:01:38 by sstoev            #+#    #+#             */
-/*   Updated: 2025/04/23 22:01:38 by sstoev           ###   ########.fr       */
+/*   Updated: 2025/05/15 17:02:26 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,15 @@ void	debug_render(t_game *game)
 	// Put the image to the window
 	mlx_put_image_to_window(game->mlx.mlx_ptr, game->mlx.win_ptr, 
                            game->mlx.img_ptr, 0, 0);
+}
+
+void ft_print_str(char **str)
+{	
+	int i = 0;
+
+	while(str[i])
+	{
+			printf("%s\n",str[i]);
+			i++;
+	}
 }
