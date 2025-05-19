@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:30:00 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/02 12:16:28 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:12:28 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CONFIG_H
 
 # include "types.h"
-# include "game.h"
 # include <fcntl.h>
 
 typedef struct s_color
@@ -44,6 +43,7 @@ int 	verify_texture_file(char *texture_path);
 
 //initialize cinfig struct by default value
 bool	init_def_config(t_config *config);
+bool    init_config(t_config *config, char **data_raw);
 
 
 int		parse_config_line(char *line, t_config *config);

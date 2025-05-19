@@ -24,7 +24,7 @@ void	print_grid(int **grid, int height, int width)
 		j = 0;
 		while (j < width)
 		{
-			ft_printf("%d ", grid[i][j]);
+			ft_printf("%c ", grid[i][j]);
 			j++;
 		}
 		ft_printf("\n");

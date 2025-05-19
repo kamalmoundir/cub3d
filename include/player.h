@@ -8,6 +8,7 @@ typedef struct	s_player
 	t_vec2	position; // player's position (posX, posY)
 	t_vec2	direction; // player's direction vector (dirX, dirY)
 	t_vec2	plane; // Camera plane for FOV
+	char	init_dir;
 	double	move_speed;
 	double	rot_speed;
 	int		health;
@@ -21,6 +22,15 @@ typedef struct	s_player
 
 // player_init.c
 bool	init_player(t_player *player);
+
+// parser/parse_extract_map_grid/map_parser.c
+bool	get_player_pos_dir(t_map *map, t_player *player);
+
+// app/init_structs_default_val.c
+bool	init_def_player(t_player *player);
+
+// init_player.c
+bool	initialize_player(t_map *map, t_player *player);
 
 // player_movement.c
 void	move_player_forward(t_game *game);

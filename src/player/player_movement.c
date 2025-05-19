@@ -19,7 +19,9 @@ void	move_player_forward(t_game *game)
 	double	new_y;
 	double	move_step;
 
+	// printf("posx: %f, posy: %f\n", game->player.position.x, game->player.position.y);
 	move_step = game->player.move_speed * game->player.move_forward;
+	//printf("move_step: %f\n", move_step); 
 	new_x = game->player.position.x + game->player.direction.x * move_step;
 	new_y = game->player.position.y + game->player.direction.y * move_step;
 	if (!is_wall(game, new_x, game->player.position.y))
@@ -34,6 +36,7 @@ void	move_player_sideways(t_game *game)
 	double	new_y;
 	double	move_step;
 
+	// printf("posx: %f, posy: %f\n", game->player.position.x, game->player.position.y);
 	move_step = game->player.move_speed * game->player.move_sideways;
 	new_x = game->player.position.x + game->player.plane.x * move_step;
 	new_y = game->player.position.y + game->player.plane.y * move_step;

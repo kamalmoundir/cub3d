@@ -25,15 +25,15 @@ bool	is_wall(t_game *game, double x, double y)
 		return (true);
 	map_x = (int)x;
 	map_y = (int)y;
-	if (game->map.grid[map_y][map_x] != 0)
+	if (game->map.grid[map_y][map_x] == '1')
 		return (true);
-	if (x - buffer < map_x && game->map.grid[map_y][(int)(x - buffer)] != 0)
+	if (x - buffer < map_x && game->map.grid[map_y][(int)(x - buffer)] == '1')
 		return (true);
-	if (x + buffer > map_x + 1 && game->map.grid[map_y][(int)(x + buffer)] != 0)
+	if (x + buffer > map_x + 1 && game->map.grid[map_y][(int)(x + buffer)] == '1')
 		return (true);
-	if (y - buffer < map_y && game->map.grid[(int)(y - buffer)][map_x] != 0)
+	if (y - buffer < map_y && game->map.grid[(int)(y - buffer)][map_x] == '1')
 		return (true);
-	if (y + buffer > map_y + 1 && game->map.grid[(int)(y + buffer)][map_x] != 0)
+	if (y + buffer > map_y + 1 && game->map.grid[(int)(y + buffer)][map_x] == '1')
 		return (true);
 	return (false);
 }

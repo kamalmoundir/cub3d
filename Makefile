@@ -15,7 +15,9 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/app/clean_central.c							\
 							$(SRC_DIR)/app/init_game.c								\
 							$(SRC_DIR)/app/input.c									\
-							$(SRC_DIR)/player/player_init.c							\
+							$(SRC_DIR)/app/init_struct_data_extract.c				\
+							$(SRC_DIR)/app/init_structs_default_val.c				\
+							$(SRC_DIR)/player/init_player.c							\
 							$(SRC_DIR)/player/player_update.c						\
 							$(SRC_DIR)/player/player_movement.c						\
 							$(SRC_DIR)/player/player_collision.c					\
@@ -26,6 +28,7 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/render/render_core.c							\
 							$(SRC_DIR)/render/render_walls.c						\
 							$(SRC_DIR)/render/render_utils.c						\
+							$(SRC_DIR)/render/load_images.c							\
 							$(SRC_DIR)/utils/memory_utils.c							\
 							$(SRC_DIR)/utils/misc_utils.c							\
 							$(SRC_DIR)/utils/debug_utils.c							\
@@ -33,18 +36,16 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/get_next_line/get_next_line.c				\
 							$(SRC_DIR)/get_next_line/get_next_line_utils.c			\
 							$(SRC_DIR)/get_next_line/data_to_array.c				\
+							$(SRC_DIR)/parser/parse_extract_map_grid/extract_grid.c	\
 							$(SRC_DIR)/parser/parse_extract_map_grid/map_parser.c	\
 							$(SRC_DIR)/parser/parse_extract_map_grid/validate_map.c \
+							$(SRC_DIR)/parser/parse_extract_map_grid/functions_map_helper.c \
 							$(SRC_DIR)/parser/parse_extract_config/texture_parser.c	\
 							$(SRC_DIR)/parser/parse_extract_config/textures_utils.c	\
 							$(SRC_DIR)/parser/parse_extract_config/extract_config.c	\
 							$(SRC_DIR)/util/validate_utils.c						\
-							$(SRC_DIR)/util/memory_utils.c							\
-							$(SRC_DIR)/parser/parse_extract_map_grid/extract_grid.c	\
 							$(SRC_DIR)/util/free_struct.c							\
-							$(SRC_DIR)/util/validate_input.c						\
-							$(SRC_DIR)/app/init_structs_default_val.c				\
-							$(SRC_DIR)/main.c
+							$(SRC_DIR)/util/validate_input.c
 
 
 TOTAL_SRC_FILES			:=	$(words $(SRC))
@@ -58,7 +59,7 @@ OBJ						=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
 
 ###	Compilation/ Linking configs
 CC						=	cc
-CFLAGS					=	-Werror -Wextra -Wall
+CFLAGS					=	#-Werror -Wextra -Wall
 LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -lXext -lX11 -lm -lz
 RM						=	rm -rf
 COUNT					:=	0
@@ -109,10 +110,16 @@ $(TEST_OBJ)				:	$(TEST_OBJ_DIR)
 $(OBJ_DIR)				:	
 							@mkdir -p $(OBJ_DIR)
 							@mkdir -p $(OBJ_DIR)/app
+							@mkdir -p $(OBJ_DIR)/error_handler
+							@mkdir -p $(OBJ_DIR)/get_next_line
 							@mkdir -p $(OBJ_DIR)/parse
+							@mkdir -p $(OBJ_DIR)/parser
+							@mkdir -p $(OBJ_DIR)/parser/parse_extract_config
+							@mkdir -p $(OBJ_DIR)/parser/parse_extract_map_grid
 							@mkdir -p $(OBJ_DIR)/player
 							@mkdir -p $(OBJ_DIR)/raycasting_engine
 							@mkdir -p $(OBJ_DIR)/render
+							@mkdir -p $(OBJ_DIR)/util
 							@mkdir -p $(OBJ_DIR)/utils
 
 #	test

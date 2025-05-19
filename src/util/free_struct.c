@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "config.h"
+#include "utils.h"
 
 void	free_config(t_config *config)
 {

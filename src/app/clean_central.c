@@ -6,6 +6,7 @@
 void	cleanup_game(t_game *game)
 {
 	int	i;
+
 	i = 0;
 	if (!game)
 		return ;

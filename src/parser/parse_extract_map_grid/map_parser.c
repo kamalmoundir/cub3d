@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:54:25 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/02 12:52:53 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/16 12:38:40 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ int	get_map_hight(t_map *map)
 
 	i = 0;
 	while (map->grid[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+int	get_map_hight1(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->copy_grid[i])
 	{
 		i++;
 	}
@@ -48,16 +60,21 @@ int	get_map_width(t_map *map)
 
 void	path_finder(char **map, int x, int y)
 {
-	if (map == NULL)
+	//int i=0;
+	//int j=0;
+	(void) x;(void)y; (void)map;
+	
+
+	/*if (map == NULL)
 		return ;
-	if (x < 0 || x >= (int)ft_strlen(map[y]) || y < 0 || !map[y]
+	if (x < 0 || x > (int)ft_strlen(map[y]) || y < 0 || !map[y]
 		|| map[y][x] == '1' || map[y][x] == 'V' || map[y][x] == ' ')
 		return ;
 	map[y][x] = 'V';
 	path_finder(map, x + 1, y);
 	path_finder(map, x - 1, y);
 	path_finder(map, x, y + 1);
-	path_finder(map, x, y - 1);
+	path_finder(map, x, y - 1);*/
 }
 
 //should be initialize  player struct befor call this function
@@ -82,10 +99,12 @@ bool get_player_pos_dir(t_map *map, t_player *player)
                 player->position.x= j;
                 player->position.y= i;
                 player->init_dir = map->grid[i][j];
+				printf("i = %d, j = %d\n", i, j);
                 found = 1;
             }
         }
     }
+	
     return (true);
 }
 
@@ -125,6 +144,7 @@ char **get_raw_lines(char *filepath)
         return (NULL);
     }
     raw_lines = array_map(fd,size);
+	
     close(fd);
     return (raw_lines);
 }
