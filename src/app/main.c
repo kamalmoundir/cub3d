@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/13 15:57:20 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <X11/keysym.h>
 #include "game.h"
@@ -12,16 +24,32 @@ static int	game_loop(t_game *game);
 
 int	main(int argc, char **argv)
 {
-	t_game	game;
+	t_game		game;
+	t_map		*map;
+	t_config	*config;
+	char		**data_raw;
 
-	if (argc != 2)
-	{
-		ft_dprintf(STDERR_FILENO, "Allowed Format: %s <map_file.cub>\n", argv[0]);
-		return (EXIT_FAILURE);
-	}
+	if(!validate_input("assets/maps/map1.cub"))
+    {
+        printf("error");
+        return (-1);
+    }
+	data_raw = get_raw_lines("assets/maps/map1.cub");
+	map = malloc(sizeof(t_map));
+	if(!init_def_map(map))
+    {
+        return (-1);
+    }
+    ft_extract_map(data_raw, map);
+	config = malloc(sizeof(t_config));
+    if(!init_def_config(config))
+        return(-1);
+    if (!extract_config(data_raw, config)) 
+    {
+        printf("Config extraction failed\n");
+        return (1);
+    }
 	ft_memset(&game, 0, sizeof(t_game));
-	// if (!parse_arguments(argc, argv, &game))
-	//	return (EXIT_FAILURE);
 	if (!init_game(&game))
 	{
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");

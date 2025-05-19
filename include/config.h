@@ -35,23 +35,23 @@ typedef struct s_config
 }	t_config;
 
 // Function prototypes
-int	parse_color(char *line, t_color *color);
-int	parse_texture_path(char *line, char **texture_path);
-int	parse_config_line(char *line, t_config *config);
+int		parse_color(char *line, t_color *color);
+int		parse_texture_path(char *line, char **texture_path);
+int		parse_config_line(char *line, t_config *config);
 
 //derify if files of texture exist
-int verify_texture_file(char *texture_path);
+int 	verify_texture_file(char *texture_path);
 
 //initialize cinfig struct by default value
 bool	init_def_config(t_config *config);
 
 
-int	parse_config_line(char *line, t_config *config);
-int	parse_texture_path(char *line, char **texture_path);
-int parse_color(char *line, t_color *color);
-bool validate_config(t_config *config);
-bool extract_config(char **raw_lines,t_config *config);
-void free_config(t_config *config);
+int		parse_config_line(char *line, t_config *config);
+int		parse_texture_path(char *line, char **texture_path);
+int 	parse_color(char *line, t_color *color);
+bool 	validate_config(t_config *config);
+bool 	extract_config(char **raw_lines,t_config *config);
+void 	free_config(t_config *config);
 
 
 #endif
