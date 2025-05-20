@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:15:37 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/15 15:53:27 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:29:30 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		check_empty_line(t_map *map);
 int		check_caracters(t_map *map);
 int		check_multi_players(t_map *map);
 int		check_borders(t_map *map);
+bool check_cell_near_empty(t_map *map);
 
 // get map hight and width
 bool 	get_map_path(char *map_path, t_map *map);

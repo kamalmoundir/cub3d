@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/13 15:57:20 by sstoev           ###   ########.fr       */
+/*   Updated: 2025/05/20 17:37:35 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,31 @@ int	main(int argc, char **argv)
 {
 	t_game		game;
 	t_map		*map;
+	char		*file;
 	t_config	*config;
 	char		**data_raw;
 
-	if(!validate_input("assets/maps/map1.cub"))
+	(void)argc;
+	printf("%s",argv[1]);
+	data_raw =NULL;
+	
+	
+	file = ft_strtrim(argv[1], " ");
+	if(!file)
+	if(!validate_input(file))
     {
         printf("error");
         return (-1);
     }
-	data_raw = get_raw_lines("assets/maps/map1.cub");
+	data_raw = get_raw_lines(file);
+	//free(file);
 	map = malloc(sizeof(t_map));
-	if(!init_def_map(map))
-    {
+	if(!init_def_map(map)){
         return (-1);
-    }
+	}
     ft_extract_map(data_raw, map);
+
+
 	config = malloc(sizeof(t_config));
     if(!init_def_config(config))
         return(-1);
@@ -52,9 +62,11 @@ int	main(int argc, char **argv)
 	ft_memset(&game, 0, sizeof(t_game));
 	if (!init_game(&game))
 	{
+		cleanup_game(&game);
 		ft_dprintf(STDERR_FILENO, "Failed to initialize game\n");
 		return (EXIT_FAILURE);
 	}
+	free_array(data_raw);
 	//printf("player_init_dir: %c, x: %f, y: %f\n", game.player.init_dir, game.player.position.x, game.player.position.y);
 //	printf("floor-r: %d, floor-g: %d, floor-b: %d\n", game.config.floor_color.r, game.config.floor_color.g, game.config.floor_color.b);
 //	printf("config-W: %s\n", game.config.west_texture);
@@ -64,7 +76,8 @@ int	main(int argc, char **argv)
 	mlx_hook(game.mlx.win_ptr, 17, 0, close_window, &game);
 	mlx_loop_hook(game.mlx.mlx_ptr, game_loop, &game);
 	mlx_loop(game.mlx.mlx_ptr);
-	cleanup_game(&game);
+	//cleanup_game(&game);
+	clean_up_all_resources(&game, map, config, data_raw);
 	return (0);
 }
 

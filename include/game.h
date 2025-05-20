@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 11:37:11 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/16 14:03:24 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:57:00 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		close_window(t_game *game);
 
 // clean_central.c
 void	cleanup_game(t_game *game);
+void clean_up_all_resources(t_game *game, t_map *map, t_config *config, char **data_raw);
 
 char	**copy_map(char **map, int rows);
 void	free_array(char **str);

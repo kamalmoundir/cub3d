@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:57:32 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/15 15:41:37 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:44:23 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	check_empty_line(t_map *map)
 	int	count;
 
 	i = 0;
-	// Correct way
 	while (map->grid[i])
 	{
 		j = 0;
@@ -123,13 +122,46 @@ static int check_first_last_lines(const char *line)
 	return 0;
 }
 
+bool check_cell_near_empty(t_map *map)
+{
+    int i;
+    int j;
+    
+    i = 0;
+    while(map->grid[i])
+    {
+        j = 0;
+        while(map->grid[i][j])
+        {
+            if(map->grid[i][j] != '1' && map->grid[i][j] != ' ')
+            {
+                if(map->grid[i][j+1] && map->grid[i][j+1] == ' ')
+                    return (true);
+                if(j > 0 && map->grid[i][j-1] == ' ')
+                    return (true);
+                if(map->grid[i+1] && map->grid[i+1][j] == ' ')
+                    return (true);
+                if(i > 0 && map->grid[i-1][j] == ' ')
+                    return (true);
+                if(!map->grid[i+1] || !map->grid[i][j+1] || j == 0 || i == 0)
+                    return (true);
+            }
+            j++;
+        }
+        i++;
+    }
+    return (false);
+}
+
 int	check_borders(t_map *map)
 {
     int	i;
     int	j;
 	
 	if(check_first_last_lines(map->grid[0]))
-		return(1);
+		return (1);
+	if(check_cell_near_empty(map))
+		return (1);
     i = 1;
     while (map->grid[i])
     {

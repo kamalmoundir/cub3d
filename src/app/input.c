@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:47:40 by sstoev            #+#    #+#             */
-/*   Updated: 2025/04/23 16:47:41 by sstoev           ###   ########.fr       */
+/*   Updated: 2025/05/20 17:22:39 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	key_release(int keycode, t_game *game)
 	return (0);
 }
 
-int	close_window(t_game *game)
+int close_window(t_game *game)
 {
-	game->running = false;
-	return (0);
+    game->running = 0;
+    return (0);
 }

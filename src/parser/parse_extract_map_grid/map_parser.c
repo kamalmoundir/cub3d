@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:54:25 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/19 15:33:56 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:46:13 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,9 @@ int	get_map_width(t_map *map)
 
 void	path_finder(char **map, int x, int y)
 {
-	//int i=0;
-	//int j=0;
-	(void) x;(void)y; (void)map;
-	
+	(void) x;(void)y; (void)map;	
 
-	/*if (map == NULL)
+	if (map == NULL)
 		return ;
 	if (x < 0 || x > (int)ft_strlen(map[y]) || y < 0 || !map[y]
 		|| map[y][x] == '1' || map[y][x] == 'V' || map[y][x] == ' ')
@@ -74,10 +71,9 @@ void	path_finder(char **map, int x, int y)
 	path_finder(map, x + 1, y);
 	path_finder(map, x - 1, y);
 	path_finder(map, x, y + 1);
-	path_finder(map, x, y - 1);*/
+	path_finder(map, x, y - 1);
 }
 
-//should be initialize  player struct befor call this function
 bool get_player_pos_dir(t_map *map, t_player *player)
 {
     int i;

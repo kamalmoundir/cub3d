@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:49:27 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/16 15:15:32 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:45:39 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,6 @@ bool	init_def_ray(t_ray *ray)
 	ray->side = 0;
     ray->wallX = 0;
     return (true);
-}
-
-bool init_def_texures()
-{
-	
 }
 
 

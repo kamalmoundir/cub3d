@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:09:24 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 17:39:44 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:05:36 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,15 @@ void	free_array(char **str)
 	int	i;
 
 	i = 0;
+	if(str && **str)
+	{
 	while (str[i])
 	{
 		safe_free((void **)&str[i]);
 		i++;
 	}
 	safe_free((void **)&str);
+}
 }
 
 char	**copy_map(char **map, int raws)

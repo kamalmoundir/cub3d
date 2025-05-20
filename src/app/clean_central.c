@@ -10,6 +10,7 @@ void	cleanup_game(t_game *game)
 	i = 0;
 	if (!game)
 		return ;
+	
 	if (game->map.grid)
 	{
 		while (i < game->map.height)
@@ -45,4 +46,19 @@ void	cleanup_game(t_game *game)
 	if (game->error.message)
 		safe_free((void **)&game->error.message);
 	game->running = false;
+}
+void clean_up_all_resources(t_game *game, t_map *map, t_config *config, char **data_raw)
+{
+	 if (data_raw)
+	free_array(data_raw);
+	free_config(config);
+	if(map)
+	{
+	 	safe_free((void **)&map->path);
+		free_array(map->grid);
+		free_array(map->copy_grid);
+		safe_free((void **)&map);
+	}
+	if (game)
+        cleanup_game(game);
 }

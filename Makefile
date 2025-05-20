@@ -59,7 +59,7 @@ OBJ						=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
 
 ###	Compilation/ Linking configs
 CC						=	cc
-CFLAGS					=	#-Werror -Wextra -Wall
+CFLAGS					=	-fsanitize=address  #-Werror -Wextra -Wall#  
 LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -lXext -lX11 -lm -lz
 RM						=	rm -rf
 COUNT					:=	0
