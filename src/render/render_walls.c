@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 23:30:03 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/19 13:13:49 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:56:04 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	draw_textured_line(t_game *game, int x, t_line *line, t_texture *texture)
 	tex_pos = (line->start - game->mlx.height / 2 + line_height / 2) * step;
 	
 	y = line->start;
-	while (y < line->end)
+	while (y <= line->end)
 	{
 		// Proper modulo to avoid texture flickering
 		tex_data.y = (int)tex_pos % texture->height;
