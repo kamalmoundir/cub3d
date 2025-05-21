@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:57:32 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/20 17:44:23 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:06:05 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,17 @@ int	validate_extension(char *s)
 	char	*tmp;
 	char	**str;
 	int		i;
+	int		fd;
 
 	i = 0;
 	str = ft_split(s, '/');
+	fd = open(s, O_RDONLY);
+	if (fd == -1)
+	{
+		printf("Error opening file");
+		free_array(str);
+		return (0);
+	}
 	while (str[i])
 		i++;
 	--i;

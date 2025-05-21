@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/20 17:37:35 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:21:50 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,17 @@ int	main(int argc, char **argv)
 	char		**data_raw;
 
 	(void)argc;
-	printf("%s",argv[1]);
 	data_raw =NULL;
 	
 	
 	file = ft_strtrim(argv[1], " ");
-	if(!file)
 	if(!validate_input(file))
     {
         printf("error");
+		free(file);
         return (-1);
     }
 	data_raw = get_raw_lines(file);
-	//free(file);
 	map = malloc(sizeof(t_map));
 	if(!init_def_map(map)){
         return (-1);
