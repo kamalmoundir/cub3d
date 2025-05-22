@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:36:44 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 18:41:28 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:58:00 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,25 @@ int	parse_texture_path(char *line, char **texture_path)
 
 int	parse_config_line(char *line, t_config *config)
 {
-	printf("line: %s\n", line);
-	if (ft_strncmp(line, "NO ", 3) == 0)
-		return (parse_texture_path(line + 3, &config->north_texture));
-	else if (ft_strncmp(line, "SO ", 3) == 0)
-		return (parse_texture_path(line + 3, &config->south_texture));
-	else if (ft_strncmp(line, "WE ", 3) == 0)
-		return (parse_texture_path(line + 3, &config->west_texture));
-	else if (ft_strncmp(line, "EA ", 3) == 0)
-		return (parse_texture_path(line + 3, &config->east_texture));
-	else if (ft_strncmp(line, "F ", 2) == 0)
-		return (parse_color(line + 2, &config->floor_color));
-	else if (ft_strncmp(line, "C ", 2) == 0)
-		return (parse_color(line + 2, &config->ceiling_color));
-	return (0);
+	int result;
+	char *line1;
+	
+	line1= ft_strtrim(line, " ");
+	result = 0;
+	if (ft_strncmp(line1, "NO ", 3) == 0)
+		result= parse_texture_path(line1 + 3, &config->north_texture);
+	else if (ft_strncmp(line1, "SO ", 3) == 0)
+		result =parse_texture_path(line1+ 3, &config->south_texture);
+	else if (ft_strncmp(line1, "WE ", 3) == 0)
+		result=parse_texture_path(line1 + 3, &config->west_texture);
+	else if (ft_strncmp(line1, "EA ", 3) == 0)
+		result=parse_texture_path(line1 + 3, &config->east_texture);
+	else if (ft_strncmp(line1, "F ", 2) == 0)
+		result = parse_color(line1 + 2, &config->floor_color);
+	else if (ft_strncmp(line1, "C ", 2) == 0)
+		result = parse_color(line1 + 2, &config->ceiling_color);
+	free(line1);
+	return (result);
 }
 
 bool	validate_config(t_config *config)

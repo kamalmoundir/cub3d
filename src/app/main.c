@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/21 13:21:50 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:31:03 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 	
 	
 	file = ft_strtrim(argv[1], " ");
+	config = malloc(sizeof(t_config));
+   
 	if(!validate_input(file))
     {
         printf("error");
@@ -48,15 +50,9 @@ int	main(int argc, char **argv)
 	}
     ft_extract_map(data_raw, map);
 
-
-	config = malloc(sizeof(t_config));
-    if(!init_def_config(config))
+ if(!init_def_config(config))
         return(-1);
-    if (!extract_config(data_raw, config)) 
-    {
-        printf("Config extraction failed\n");
-        return (1);
-    }
+	
 	ft_memset(&game, 0, sizeof(t_game));
 	if (!init_game(&game))
 	{

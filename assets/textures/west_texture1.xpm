@@ -1,5 +1,5 @@
 /* XPM */
-static const char *north_texture[] = {
+static const char *west_texture[] = {
 /* columns rows colors chars-per-pixel */
 "360 240 256 2 ",
 "   c #0C052D",

@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:58:14 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/21 13:08:54 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:52:34 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	map_valid_border(char **data_raw, t_map *map)
 
 static bool	validate_map_path(t_map *map, t_player player, char **data_raw)
 {
-	// (void)player;
+
 	if (!map_valid_border(data_raw, map))
 		return (false);
 	map->copy_grid = copy_map(map->grid, get_map_hight(map));
@@ -60,16 +60,22 @@ bool	validate_input(char *path)
 	data_raw = get_raw_lines(path);
 	if (!data_raw)
 		return (false);
+
 	map = malloc(sizeof(t_map));
 	if (!map || !ft_extract_map(data_raw, map))
 		return (free_array(data_raw), safe_free((void **)&map), false);
+			
 	if (!map_valid_border(data_raw, map))
 		return (false);
+		
 	config = malloc(sizeof(t_config));
-	if (!config || !extract_config(data_raw, config)
-		|| !validate_config(config))
+	
+	init_def_config(config);
+	
+	if (!config || !extract_config(data_raw, config)||!validate_config(config) )
 		return (free_config(config), free_array(map->grid),
 			safe_free((void **)&map), free_array(data_raw), false);
+		
 	if (!get_player_pos_dir(map, &player))
 		return (free_config(config), free_array(map->copy_grid),
 			free_array(map->grid), safe_free((void **)&map),

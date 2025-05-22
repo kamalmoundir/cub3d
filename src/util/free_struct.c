@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:29:26 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/20 17:02:47 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 17:52:41 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	free_config(t_config *config)
 			safe_free((void **)&config->west_texture);
 		safe_free((void **)&config);
 	}
+
 }

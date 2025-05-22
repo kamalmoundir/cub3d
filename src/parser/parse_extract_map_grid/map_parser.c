@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:54:25 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/20 14:46:13 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 15:44:18 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,8 @@ char **get_raw_lines(char *filepath)
         return (NULL);
     }
     raw_lines = array_map(fd,size);
-	
+	if(!raw_lines)
+		return NULL;
     close(fd);
     return (raw_lines);
 }

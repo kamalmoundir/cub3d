@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:04:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/01 17:34:48 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:01:42 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ size_t	ft_strlcpy_gnl(char *dst, char *src, size_t size)
 		return (len);
 	while (src[++i] && src[i] != '\n' && i < size && src[i] != '\0')
 		dst[i] = src[i];
+	if(i == 0)
+	dst[i++] = '\n';
 	dst[i] = '\0';
 	return (len);
 }
