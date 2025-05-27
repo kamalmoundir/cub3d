@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   player.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/27 16:34:32 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/27 16:34:33 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PLAYER_H
 # define PLAYER_H
 
-#include "types.h"
+# include "types.h"
 
-typedef struct	s_player
+typedef struct s_player
 {
 	t_vec2	position; // player's position (posX, posY)
 	t_vec2	direction; // player's direction vector (dirX, dirY)

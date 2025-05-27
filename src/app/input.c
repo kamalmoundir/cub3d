@@ -49,6 +49,9 @@ int	key_release(int keycode, t_game *game)
 
 int close_window(t_game *game)
 {
-    game->running = 0;
+    ft_printf("Closing window\n");
+	game->running = 0;
+    cleanup_game(game);
+    exit(0);  // Exit after cleanup
     return (0);
 }
