@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	}
     ft_extract_map(data_raw, map);
 
- if(!init_def_config(config))
+	if(!init_def_config(config))
         return(-1);
 	
 	ft_memset(&game, 0, sizeof(t_game));
