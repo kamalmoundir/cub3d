@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef GNL_H
-#define GNL_H
+# define GNL_H
 
-#include "types.h"
+# include "types.h"
 
 char			*get_next_line(int fd);
 size_t			ft_strlcpy_gnl(char *dst, char *src, size_t size);

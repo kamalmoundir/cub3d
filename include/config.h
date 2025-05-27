@@ -18,19 +18,19 @@
 
 typedef struct s_color
 {
-    int	r;
-    int	g;
-    int	b;
+	int	r;
+	int	g;
+	int	b;
 }	t_color;
 
 typedef struct s_config
 {
-    char	*north_texture;
-    char	*south_texture;
-    char	*west_texture;
-    char	*east_texture;
-    t_color	floor_color;
-    t_color	ceiling_color;
+	char	*north_texture;
+	char	*south_texture;
+	char	*west_texture;
+	char	*east_texture;
+	t_color	floor_color;
+	t_color	ceiling_color;
 }	t_config;
 
 // Function prototypes
@@ -39,15 +39,14 @@ int		parse_texture_path(char *line, char **texture_path);
 int		parse_config_line(char *line, t_config *config);
 
 //derify if files of texture exist
-bool    verify_texture_file(char *texture_path);
-int     rgb_to_int(t_color color);
+bool	verify_texture_file(char *texture_path);
+int		rgb_to_int(t_color color);
 
 //initialize cinfig struct by default value
 bool	init_def_config(t_config *config);
-bool    init_config(t_config *config, char **data_raw);
-bool 	validate_config(t_config *config);
-bool 	extract_config(char **raw_lines,t_config *config);
-void 	free_config(t_config *config);
-
+bool	init_config(t_config *config, char **data_raw);
+bool	validate_config(t_config *config);
+bool	extract_config(char **raw_lines, t_config *config);
+void	free_config(t_config *config);
 
 #endif

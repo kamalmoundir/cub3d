@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/27 16:38:39 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/27 16:38:40 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILS_H
 # define UTILS_H
 
@@ -19,5 +31,5 @@ double	get_time_ms(void);
 // debug_utils.c
 void	print_grid(int **grid, int height, int width);
 void	debug_render(t_game *game);
-void    ft_print_str(char **str);
+void	ft_print_str(char **str);
 #endif

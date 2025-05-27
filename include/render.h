@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/27 16:36:48 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/27 16:36:49 by sstoev           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef RENDER_H
 # define RENDER_H
 
@@ -21,22 +33,22 @@ typedef struct s_render_data
 
 typedef struct s_texture
 {
-    void *img;
-    int  *data;
-    int   width;
-    int   height;
-    int   bits_pixel;
-    int   size_line;
-    int   endian;
-} t_texture;
+	void	*img;
+	int		*data;
+	int		width;
+	int		height;
+	int		bits_pixel;
+	int		size_line;
+	int		endian;
+}	t_texture;
 
 typedef struct s_textures
 {
-    t_texture north;
-    t_texture south;
-    t_texture east;
-    t_texture west;
-} t_textures;
+	t_texture	north;
+	t_texture	south;
+	t_texture	east;
+	t_texture	west;
+}	t_textures;
 
 typedef struct s_texture_data
 {

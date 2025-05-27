@@ -24,7 +24,7 @@ static void	free_data(t_config *config, t_map *map, char **data_raw)
 	free_array(data_raw);
 }
 
-static bool	map_valid_border(char **data_raw, t_map *map)
+bool	map_valid_border(char **data_raw, t_map *map)
 {
 	if (check_caracters(map) || check_multi_players(map) || check_borders(map)
 		|| check_empty_line(map) || check_cell_near_empty(map))

@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_wrapper.h                                      :+:      :+:    :+:   */
+/*   debug.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sstoev <sstoev@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:33:58 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/27 16:33:59 by sstoev           ###   ########.fr       */
+/*   Created: 2025/05/27 16:28:59 by sstoev            #+#    #+#             */
+/*   Updated: 2025/05/27 16:29:00 by sstoev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_WRAPPER_H
-# define MLX_WRAPPER_H
+#ifndef DEBUG_H
+# define DEBUG_H
 
-# include <math.h>
-# include "../lib/minilibx-linux/mlx.h"
 # include "game.h"
-# include "types.h"
 
-typedef struct s_mlx
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*img_ptr;
-	char	*img_data;
-	int		width;
-	int		height;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_mlx;
+void	debug_game_state(t_game *game);
+void	debug_mlx_state(t_mlx *mlx);
+void	debug_map_state(t_map *map);
+void	debug_player_state(t_player *player);
+void	debug_config_state(t_config *config);
+void	debug_textures_state(t_textures *textures);
+bool	validate_game_initialization(t_game *game);
 
 #endif

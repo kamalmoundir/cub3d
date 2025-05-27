@@ -34,7 +34,7 @@
 #  define BUFFER_SIZE 50
 # endif
 
-typedef struct	s_game
+typedef struct s_game
 {
 	t_mlx			mlx;
 	t_player		player;
@@ -49,9 +49,9 @@ typedef struct	s_game
 	t_textures		textures;
 }	t_game;
 
-
 // init_game.c
 bool	init_game(t_game *game);
+bool	init_game_with_file(t_game *game, const char *map_file);
 
 // input.c
 int		key_press(int keycode, t_game *game);
@@ -60,7 +60,7 @@ int		close_window(t_game *game);
 
 // clean_central.c
 void	cleanup_game(t_game *game);
-void clean_up_all_resources(t_game *game, t_map *map, t_config *config, char **data_raw);
+void	clean_up_all_resources(t_game *game, t_map *map, t_config *config, char **data_raw);
 
 char	**copy_map(char **map, int rows);
 void	free_array(char **str);
@@ -73,6 +73,5 @@ bool	is_map_line(const char *line);
 bool	ft_extract_map(char **raw_lines, t_map *map);
 int		is_empty_line(const char *line);
 bool	validate_input(char *path);
-
 
 #endif
