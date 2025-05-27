@@ -32,15 +32,27 @@ int	main(int argc, char **argv)
 
 	(void)argc;
 	data_raw =NULL;
-	
-	
+	if (argc != 2)
+    {
+        printf("Usage: %s <map_file>\n", argv[0]);
+        return (-1);
+    }
 	file = ft_strtrim(argv[1], " ");
-	config = malloc(sizeof(t_config));
-   
+	if (!file)
+    {
+        printf("Memory allocation failed\n");
+        return (-1);
+    }
 	if(!validate_input(file))
     {
         printf("error");
 		free(file);
+        return (-1);
+    }
+	config = malloc(sizeof(t_config));
+	if (!config)
+    {
+        free(file);
         return (-1);
     }
 	data_raw = get_raw_lines(file);
