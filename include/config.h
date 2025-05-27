@@ -49,5 +49,4 @@ bool 	validate_config(t_config *config);
 bool 	extract_config(char **raw_lines,t_config *config);
 void 	free_config(t_config *config);
 
-
 #endif

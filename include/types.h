@@ -32,6 +32,7 @@ typedef struct s_render_data	t_render_data;
 typedef struct s_textures		t_textures;
 typedef struct s_keys			t_keys;
 typedef struct s_color			t_color;
+typedef struct s_parse_result	t_parse_result;
 
 typedef struct	s_vec2
 {

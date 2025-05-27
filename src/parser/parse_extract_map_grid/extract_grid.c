@@ -51,10 +51,6 @@ static void 	ft_copy_map(char **raw_lines, char **grid, const int start_index,
 		}
 	}
     grid[i] = NULL;
-
-		
-
-	
 }
 
 bool ft_extract_map(char **raw_lines,t_map *map)

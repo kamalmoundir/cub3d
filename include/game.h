@@ -52,6 +52,7 @@ typedef struct	s_game
 
 // init_game.c
 bool	init_game(t_game *game);
+bool 	init_game_with_file(t_game *game, const char *map_file);
 
 // input.c
 int		key_press(int keycode, t_game *game);
