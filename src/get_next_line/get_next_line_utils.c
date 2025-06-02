@@ -6,11 +6,12 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:04:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/31 16:06:57 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:57:55 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "game.h"
+#include "gnl.h"
 
 char	*ft_strjoin_gnl(char *s1, char *s2)
 {
@@ -111,6 +112,8 @@ size_t	ft_strlcpy_gnl(char *dst, char *src, size_t size)
 		return (len);
 	while (src[++i] && src[i] != '\n' && i < size && src[i] != '\0')
 		dst[i] = src[i];
+	if (i == 0)
+		dst[i++] = '\n';
 	dst[i] = '\0';
 	return (len);
 }
