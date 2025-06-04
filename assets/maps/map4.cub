@@ -1,10 +1,10 @@
-NO assets/textures/north_texture2.xpm
-SO assets/textures/south_texture1.xpm
-EA assets/textures/east_texture1.xpm
-WE assets/textures/west_texture1.xpm
+NO assets/textures/purplestone.xpm
+SO assets/textures/redbrick.xpm
+EA assets/textures/eagle.xpm
+WE assets/textures/redbrick.xpm
 
 
-C 207,231,149
+C 174, 212, 246
 F 247,239,129
 
 11111111111111111

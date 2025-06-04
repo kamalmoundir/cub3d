@@ -1,3 +1,15 @@
+
+ 
+C 255,255,255
+F 139,90,43
+
+
+
+ NO assets/textures/bluestone.xpm
+ SO assets/textures/pillar.xpm                      
+ WE assets/textures/redbrick.xpm
+ EA assets/textures/wood.xpm
+
 111
  1S1
 1001

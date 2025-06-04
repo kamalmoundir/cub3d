@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:36:44 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/06/04 12:31:44 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 14:09:37 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,15 +88,17 @@ bool	validate_config(t_config *config)
 {
 	if (!config->north_texture || !config->south_texture
 		|| !config->east_texture || !config->west_texture)
-		return (printf("1\n"), false);
+		return (false);
 	if (!is_valid_color(config->floor_color.r, config->floor_color.g,
 			config->floor_color.b) || !is_valid_color(config->ceiling_color.r,
 			config->ceiling_color.g, config->ceiling_color.b))
-		return (printf("2\n"), false);
+		return (ft_dprintf(STDERR_FILENO,
+				"ERROR :\nFailed to validate colors\n"), false);
 	if (!verify_texture_file(config->north_texture)
 		|| !verify_texture_file(config->south_texture)
 		|| !verify_texture_file(config->east_texture)
 		|| !verify_texture_file(config->west_texture))
-		return (printf("3\n"), false);
+		return (ft_dprintf(STDERR_FILENO,
+				"ERROR :\nFailed to validate textures\n"), false);
 	return (true);
 }

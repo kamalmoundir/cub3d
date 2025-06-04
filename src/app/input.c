@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:47:40 by sstoev            #+#    #+#             */
-/*   Updated: 2025/06/02 17:41:40 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:46:23 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	key_press(int keycode, t_game *game)
 		game->player.rotate = 1;
 	else if (keycode == XK_Escape)
 	{
-		ft_printf("Pressing Esc\n");
+		ft_printf("Closing window\n");
 		cleanup_game(game);
 		exit(0);
 	}
