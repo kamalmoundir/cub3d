@@ -1,16 +1,16 @@
-==2568110== Memcheck, a memory error detector
-==2568110== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2568110== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2568110== Command: ./cub3d assets/invalid_maps/map-no-1.cub
-==2568110== 
+==2176703== Memcheck, a memory error detector
+==2176703== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2176703== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2176703== Command: ./cub3d assets/invalid_maps/map-no-1.cub
+==2176703== 
 ERROR :
 Failed to validate map grid
-==2568110== 
-==2568110== HEAP SUMMARY:
-==2568110==     in use at exit: 0 bytes in 0 blocks
-==2568110==   total heap usage: 224 allocs, 224 frees, 9,337 bytes allocated
-==2568110== 
-==2568110== All heap blocks were freed -- no leaks are possible
-==2568110== 
-==2568110== For lists of detected and suppressed errors, rerun with: -s
-==2568110== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2176703== 
+==2176703== HEAP SUMMARY:
+==2176703==     in use at exit: 0 bytes in 0 blocks
+==2176703==   total heap usage: 231 allocs, 231 frees, 9,798 bytes allocated
+==2176703== 
+==2176703== All heap blocks were freed -- no leaks are possible
+==2176703== 
+==2176703== For lists of detected and suppressed errors, rerun with: -s
+==2176703== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

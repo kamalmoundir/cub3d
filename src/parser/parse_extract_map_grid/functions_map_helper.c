@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:29:31 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/06/02 16:37:24 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:31:48 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	validate_extension(char *s)
 	char	*tmp;
 	char	**str;
 	int		i;
-	int		fd;
 
 	i = -1;
 	str = ft_split(s, '/');

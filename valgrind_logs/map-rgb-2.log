@@ -1,16 +1,16 @@
-==2568287== Memcheck, a memory error detector
-==2568287== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2568287== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2568287== Command: ./cub3d assets/invalid_maps/map-rgb-2.cub
-==2568287== 
+==2176914== Memcheck, a memory error detector
+==2176914== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2176914== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2176914== Command: ./cub3d assets/invalid_maps/map-rgb-2.cub
+==2176914== 
 ERROR :
 Failed to validate config
-==2568287== 
-==2568287== HEAP SUMMARY:
-==2568287==     in use at exit: 0 bytes in 0 blocks
-==2568287==   total heap usage: 262 allocs, 262 frees, 10,397 bytes allocated
-==2568287== 
-==2568287== All heap blocks were freed -- no leaks are possible
-==2568287== 
-==2568287== For lists of detected and suppressed errors, rerun with: -s
-==2568287== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2176914== 
+==2176914== HEAP SUMMARY:
+==2176914==     in use at exit: 0 bytes in 0 blocks
+==2176914==   total heap usage: 262 allocs, 262 frees, 10,397 bytes allocated
+==2176914== 
+==2176914== All heap blocks were freed -- no leaks are possible
+==2176914== 
+==2176914== For lists of detected and suppressed errors, rerun with: -s
+==2176914== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

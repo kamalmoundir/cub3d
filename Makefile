@@ -1,6 +1,5 @@
 ###	Variables
 NAME					=	cub3d
-TEST_EXEC				=	test_runner
 LIBFT 					=	lib/libft
 MINILIBX				=	lib/minilibx-linux
 INCLUDES				=	./include
@@ -57,7 +56,7 @@ OBJ						=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
 
 ###	Compilation/ Linking configs
 CC						=	cc
-CFLAGS					=	#-fsanitize=address #-Werror -Wextra -Wall#  
+CFLAGS					=	 -Werror -Wextra -Wall #-fsanitize=address
 LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -lXext -lX11 -lm -lz
 RM						=	rm -rf
 COUNT					:=	0
@@ -86,14 +85,8 @@ $(NAME)					:	$(OBJ)
 							@printf "\n$(DEF_COLOR)✅ Dependencies fulfilled.$(DEF_COLOR)\n"
 							@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LDFLAGS)
 							@printf "\n$(BOLD_GREEN)[$(NAME)]:\t✅ $(NAME) compiled successfully!$(DEF_COLOR)\n"
-#	test
-$(TEST_EXEC)			:	$(TEST_OBJ)
-							@make -C $(LIBFT) 
-							@echo "$(ORANGE)[$(NAME)]:\t🔧 Testing mode activated.$(DEF_COLOR)"
-							@$(CC) $(CFLAGS) -o $(TEST_EXEC) $(TEST_OBJ) $(LDFLAGS_TEST)
 
 $(OBJ)					:	$(OBJ_DIR)
-$(TEST_OBJ)				:	$(TEST_OBJ_DIR)
 
 #	Create the object directory if it doesn't exist
 $(OBJ_DIR)				:	
@@ -111,9 +104,7 @@ $(OBJ_DIR)				:
 							@mkdir -p $(OBJ_DIR)/util
 							@mkdir -p $(OBJ_DIR)/utils
 
-#	test
-$(TEST_OBJ_DIR)			:
-							@mkdir -p $(TEST_OBJ_DIR)
+
 
 ###	Rules for creating compiling .c files into obj
 ##	prod
@@ -143,7 +134,7 @@ fclean					:	clean
 re						:	fclean all
 							@echo "$(BOLD_GREEN)[$(NAME)]:\t🚀 Cleaned and rebuilt all.$(DEF_COLOR)"
 
-.PHONY					:	all clean fclean re test
+.PHONY					:	all clean fclean re 
 
 ###	Progress Bar
 #	Macro to update progress bar

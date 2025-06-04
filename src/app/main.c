@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
-/*   Updated: 2025/06/03 14:40:45 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:31:28 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 	char	*file;
-	char	**data_raw;
 
 	if (!validate_args(argc, argv))
 		return (EXIT_FAILURE);

@@ -1,16 +1,16 @@
-==2568080== Memcheck, a memory error detector
-==2568080== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2568080== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2568080== Command: ./cub3d assets/invalid_maps/map-litle.cub
-==2568080== 
+==2176673== Memcheck, a memory error detector
+==2176673== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2176673== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2176673== Command: ./cub3d assets/invalid_maps/map-litle.cub
+==2176673== 
 ERROR :
-Unreachable area detected
-==2568080== 
-==2568080== HEAP SUMMARY:
-==2568080==     in use at exit: 0 bytes in 0 blocks
-==2568080==   total heap usage: 138 allocs, 138 frees, 3,805 bytes allocated
-==2568080== 
-==2568080== All heap blocks were freed -- no leaks are possible
-==2568080== 
-==2568080== For lists of detected and suppressed errors, rerun with: -s
-==2568080== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Failed to validate map grid
+==2176673== 
+==2176673== HEAP SUMMARY:
+==2176673==     in use at exit: 0 bytes in 0 blocks
+==2176673==   total heap usage: 134 allocs, 134 frees, 3,749 bytes allocated
+==2176673== 
+==2176673== All heap blocks were freed -- no leaks are possible
+==2176673== 
+==2176673== For lists of detected and suppressed errors, rerun with: -s
+==2176673== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

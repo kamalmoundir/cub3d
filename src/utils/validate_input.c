@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:58:14 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/06/04 12:24:13 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:34:49 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 static bool	validate_grid(char **data_raw, t_map *map);
 static bool	check_conf(t_config *config, t_map *map, char **data_raw);
-static bool	validate_map_path(t_map *map, t_player player, char **data_raw);
-static bool	map_valid_border(char **data_raw, t_map *map);
+static bool	validate_map_path(t_map *map, t_player player);
+static bool	map_valid_border(t_map *map);
 
 bool	validate_input(char *path)
 {
@@ -26,7 +26,6 @@ bool	validate_input(char *path)
 	t_map		map;
 	t_config	config;
 	t_player	player;
-	char		*file;
 
 	if (!validate_extension(path))
 		return (false);
@@ -35,8 +34,7 @@ bool	validate_input(char *path)
 		return (false);
 	if (!validate_grid(data_raw, &map))
 		return (false);
-	if (!get_player_pos_dir(&map, &player) || !validate_map_path(&map, player,
-			data_raw))
+	if (!get_player_pos_dir(&map, &player) || !validate_map_path(&map, player))
 		return (clean_up_all_resources(NULL, &map, NULL, data_raw), false);
 	if (!check_conf(&config, &map, data_raw))
 		return (false);
@@ -47,7 +45,7 @@ bool	validate_input(char *path)
 static bool	validate_grid(char **data_raw, t_map *map)
 {
 	init_def_map(map);
-	if (!ft_extract_map(data_raw, map) || !map_valid_border(data_raw, map))
+	if (!ft_extract_map(data_raw, map) || !map_valid_border(map))
 	{
 		ft_dprintf(STDERR_FILENO, "ERROR :\nFailed to validate map grid\n");
 		return (clean_up_all_resources(NULL, map, NULL, data_raw), false);
@@ -66,7 +64,7 @@ static bool	check_conf(t_config *config, t_map *map, char **data_raw)
 	return (true);
 }
 
-static bool	map_valid_border(char **data_raw, t_map *map)
+static bool	map_valid_border(t_map *map)
 {
 	if (check_caracters(map) || check_multi_players(map) || check_borders(map)
 		|| check_empty_line(map) || check_cell_near_empty(map))
@@ -74,9 +72,9 @@ static bool	map_valid_border(char **data_raw, t_map *map)
 	return (true);
 }
 
-static bool	validate_map_path(t_map *map, t_player player, char **data_raw)
+static bool	validate_map_path(t_map *map, t_player player)
 {
-	if (!map_valid_border(data_raw, map))
+	if (!map_valid_border(map))
 		return (false);
 	map->copy_grid = copy_map(map->grid, get_map_hight(map));
 	if (!map->copy_grid)
