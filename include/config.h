@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:30:00 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/06/02 18:00:44 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:32:54 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ bool		init_config(t_config *config, char **data_raw);
 bool		validate_config(t_config *config);
 bool		extract_config(char **raw_lines, t_config *config);
 void		free_config(t_config *config);
+int			ft_is_number(const char *s);
 
 #endif

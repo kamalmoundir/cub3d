@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:57:19 by sstoev            #+#    #+#             */
-/*   Updated: 2025/05/30 16:29:51 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:40:45 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static int	game_loop(t_game *game)
 		return (1);
 	}
 	update_player(game);
-	debug_render(game);
 	render_frame(game);
 	return (0);
 }

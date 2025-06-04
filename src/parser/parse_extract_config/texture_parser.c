@@ -6,13 +6,14 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:36:44 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/30 16:59:22 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:31:44 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "config.h"
 #include "game.h"
 #include "types.h"
+#include <ctype.h>
 #include <stdlib.h>
 
 static int	is_valid_color(int r, int g, int b)
@@ -28,7 +29,8 @@ int	parse_color(char *line, t_color *color)
 	int		b;
 
 	rgb = ft_split(line, ',');
-	if (!rgb || !rgb[0] || !rgb[1] || !rgb[2] || rgb[3])
+	if (!rgb || !rgb[0] || !rgb[1] || !rgb[2] || !ft_is_number(rgb[0])
+		|| !ft_is_number(rgb[1]) || !ft_is_number(rgb[2]))
 	{
 		if (rgb)
 			free_array(rgb);

@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:58:14 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/06/02 17:38:47 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:24:13 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ bool	validate_input(char *path)
 		return (false);
 	if (!validate_grid(data_raw, &map))
 		return (false);
-	if (!check_conf(&config, &map, data_raw))
-		return (false);
 	if (!get_player_pos_dir(&map, &player) || !validate_map_path(&map, player,
 			data_raw))
 		return (clean_up_all_resources(NULL, &map, NULL, data_raw), false);
+	if (!check_conf(&config, &map, data_raw))
+		return (false);
 	clean_up_all_resources(NULL, &map, &config, data_raw);
 	return (true);
 }
@@ -80,9 +80,11 @@ static bool	validate_map_path(t_map *map, t_player player, char **data_raw)
 		return (false);
 	map->copy_grid = copy_map(map->grid, get_map_hight(map));
 	if (!map->copy_grid)
-		return (printf("error copy grid\n"), false);
+		return (ft_dprintf(STDERR_FILENO, "ERROR :\nFailed to copy map grid\n"),
+			false);
 	path_finder(map->copy_grid, player.position.x, player.position.y);
 	if (check_unreachable_area(map))
-		return (printf("error unreachable area\n"), false);
+		return (ft_dprintf(STDERR_FILENO,
+				"ERROR :\nUnreachable area detected\n"), false);
 	return (true);
 }

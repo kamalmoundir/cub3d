@@ -29,10 +29,6 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/render/render_walls.c						\
 							$(SRC_DIR)/render/render_utils.c						\
 							$(SRC_DIR)/render/load_images.c							\
-							$(SRC_DIR)/utils/memory_utils.c							\
-							$(SRC_DIR)/utils/misc_utils.c							\
-							$(SRC_DIR)/utils/debug_utils.c							\
-							$(SRC_DIR)/utils/error_utils.c							\
 							$(SRC_DIR)/get_next_line/get_next_line.c				\
 							$(SRC_DIR)/get_next_line/get_next_line_utils.c			\
 							$(SRC_DIR)/get_next_line/data_to_array.c				\
@@ -43,9 +39,11 @@ SRC						=	$(SRC_DIR)/app/main.c									\
 							$(SRC_DIR)/parser/parse_extract_config/texture_parser.c	\
 							$(SRC_DIR)/parser/parse_extract_config/textures_utils.c	\
 							$(SRC_DIR)/parser/parse_extract_config/extract_config.c	\
-							$(SRC_DIR)/util/validate_utils.c						\
-							$(SRC_DIR)/util/free_struct.c							\
-							$(SRC_DIR)/util/validate_input.c
+							$(SRC_DIR)/utils/validate_utils.c						\
+							$(SRC_DIR)/utils/memory_utils.c							\
+							$(SRC_DIR)/utils/misc_utils.c							\
+							$(SRC_DIR)/utils/error_utils.c							\
+							$(SRC_DIR)/utils/validate_input.c
 
 
 TOTAL_SRC_FILES			:=	$(words $(SRC))
@@ -64,16 +62,7 @@ LDFLAGS					=	-lreadline -L$(LIBFT) -L$(MINILIBX) -L/usr/lib -lft -lmlx_Linux -l
 RM						=	rm -rf
 COUNT					:=	0
 
-###	</Testing set-up
-TEST_DIR				=	tests
-TEST_SRC_DIR			=	$(TEST_DIR)/src
-TEST_OBJ_DIR			=	$(TEST_DIR)/obj
-TEST_SRC				= 	$(TEST_SRC_DIR)/test_parser.c
-TEST_OBJ				=	$(filter-out $(OBJ_DIR)/app/%, $(OBJ))							\
-							$(patsubst $(TEST_SRC_DIR)/%, $(TEST_OBJ_DIR)/%, $(TEST_SRC:.c=.o))
-CFLAGS_TEST				=	$(CFLAGS) -DCRITERION_LOGGING_LEVEL=CR_LOG_INFO
-LDFLAGS_TEST			=	$(LDFLAGS) -lcriterion 
-###	Testing set-up />
+
 
 ###	Color Schemes
 DEF_COLOR		=	\033[0;37m # Light gray
